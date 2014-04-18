@@ -5,7 +5,7 @@
   "version": "0.0.0",
   "description": "A short description of your package",
   "activationEvents": ["linter-jshint:toggle"],
-  "repository": "https://github.com/atom/linter-jshint",
+  "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
