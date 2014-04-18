@@ -3,7 +3,7 @@
   "main": "./lib/init",
   "linter-package": true,
   "version": "0.0.1",
-  "description": "A short description of your package",
+  "description": "Linter plugin for JavaScript, using jshint",
   "activationEvents": [
     "linter-jshint:toggle"
   ],
