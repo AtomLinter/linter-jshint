@@ -2,14 +2,15 @@
   "name": "linter-jshint",
   "main": "./lib/init",
   "linter-package": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A short description of your package",
-  "activationEvents": ["linter-jshint:toggle"],
+  "activationEvents": [
+    "linter-jshint:toggle"
+  ],
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
