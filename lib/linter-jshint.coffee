@@ -1,5 +1,7 @@
 linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
+path = require 'path'
+fs = require 'fs'
 
 class LinterJshint extends Linter
   # The syntax that the linter handles. May be a string or
@@ -25,6 +27,19 @@ class LinterJshint extends Linter
     ')'
 
   constructor: (editorView)->
+    # Let's find a `.jshintrc` file to use
+    # with the JSHint cli
+    jshintrc = @findJSHintrc()
+    @cmd = "#{@cmd} -c #{jshintrc}" if jshintrc
+
     @executablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
+
+  findJSHintrc: ->
+    projectDir = atom.project.path
+    jshintrcPath = path.join projectDir, '.jshintrc'
+    if fs.existsSync jshintrcPath
+      return jshintrcPath
+    else
+      return false
 
 module.exports = LinterJshint
