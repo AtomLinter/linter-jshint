@@ -37,9 +37,20 @@ class LinterJshint extends Linter
   findJSHintrc: ->
     projectDir = atom.project.path
     jshintrcPath = path.join projectDir, '.jshintrc'
+    # Check if there's a `.jshintrc` file in project dir
     if fs.existsSync jshintrcPath
+      # found, return this file
       return jshintrcPath
     else
-      return false
+      # Okey no `.jshintrc` file found in project dir
+      # let's try in home folder
+      homeDir = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE
+      jshintrcPath = path.join homeDir, '.jshintrc'
+      if fs.existsSync jshintrcPath
+        # found in Home dir, return this file
+        return jshintrcPath
+      else
+        # nothing false, let's use default config
+        return false
 
 module.exports = LinterJshint
