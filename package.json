@@ -12,5 +12,7 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "jshint": "~2.5.0"
+  }
 }
