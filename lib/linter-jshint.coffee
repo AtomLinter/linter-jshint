@@ -10,8 +10,6 @@ class LinterJshint extends Linter
   # containing the command line (with arguments) used to lint.
   cmd: 'jshint --verbose --extract=auto'
 
-  executablePath: null
-
   linterName: 'jshint'
 
   # A regex pattern used to extract information from the executable's output.
