@@ -1,3 +1,5 @@
+path = require 'path'
+
 module.exports =
   configDefaults:
-    jshintExecutablePath: null
+    jshintExecutablePath: path.join __dirname, '..', 'node_modules', '.bin'
