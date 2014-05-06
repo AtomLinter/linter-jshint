@@ -6,22 +6,6 @@ This linter plugin for [Linter](https://github.com/AtomLinter/Linter) provides a
 ## Installation
 Linter package must be installed in order to use this plugin. If Linter is not installed, please follow the instructions [here](https://github.com/AtomLinter/Linter).
 
-### jshint installation
-Before using this plugin, you must ensure that `jshint` is installed on your system. To install `jshint`, do the following:
-
-1. Install [Node.js](http://nodejs.org) (and [npm](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager) on Linux).
-
-1. Install `jshint` by typing the following in a terminal:
-   ```
-   npm install -g jshint
-   ```
-
-1. If you are using `nvm` and `zsh`, ensure that the line to load `nvm` is in `.zshenv` and not `.zshrc`.
-
-**Note:** This plugin requires `jshint` 2.4.0 or later.
-
-Now you can proceed to install the linter-jshint plugin.
-
 ### Plugin installation
 ```
 $ apm install linter-jshint
