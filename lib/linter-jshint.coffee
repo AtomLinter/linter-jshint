@@ -23,6 +23,7 @@ class LinterJshint extends Linter
     ')'
 
   constructor: (editorView)->
-    @executablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
+    atom.config.observe 'linter-jshint.jshintExecutablePath', =>
+      @executablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
 
 module.exports = LinterJshint
