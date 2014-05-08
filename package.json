@@ -2,7 +2,7 @@
   "name": "linter-jshint",
   "main": "./lib/init",
   "linter-package": true,
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Linter plugin for JavaScript, using jshint",
   "activationEvents": [
     "linter-jshint:toggle"
