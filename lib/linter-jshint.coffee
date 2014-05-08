@@ -26,4 +26,7 @@ class LinterJshint extends Linter
     atom.config.observe 'linter-jshint.jshintExecutablePath', =>
       @executablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
 
+  destroy: ->
+    atom.config.unobserve 'linter-jshint.jshintExecutablePath'
+
 module.exports = LinterJshint
