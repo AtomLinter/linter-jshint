@@ -22,7 +22,9 @@ class LinterJshint extends Linter
     # '\\((?<warning>.).+\\)'
     ')'
 
-  constructor: (editorView)->
+  constructor: (editor)->
+    super(editor)
+
     atom.config.observe 'linter-jshint.jshintExecutablePath', =>
       @executablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
 
