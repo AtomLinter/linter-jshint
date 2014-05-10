@@ -4,9 +4,6 @@
   "linter-package": true,
   "version": "0.0.9",
   "description": "Linter plugin for JavaScript, using jshint",
-  "activationEvents": [
-    "linter-jshint:toggle"
-  ],
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
   "engines": {
