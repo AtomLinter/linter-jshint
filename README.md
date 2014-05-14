@@ -27,7 +27,7 @@ If you would like to contribute enhancements or fixes, please do the following:
 1. Make a pull request.
 1. welcome to the club
 
-Please note that modications should follow these coding guidelines:
+Please note that modifications should follow these coding guidelines:
 
 - Indent is 2 spaces.
 - Code should pass coffeelint linter.
