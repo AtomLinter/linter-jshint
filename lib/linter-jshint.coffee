@@ -30,10 +30,17 @@ class LinterJshint extends Linter
     if config
       @cmd += " -c #{config}"
 
-    atom.config.observe 'linter-jshint.jshintExecutablePath', =>
-      @executablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
+    atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
+    atom.config.observe 'linter-jshint.nodeExecutablePath', @formatShellCmd
+
+  formatShellCmd: =>
+    nodeExecutablePath = atom.config.get 'linter-jshint.nodeExecutablePath'
+    jshintExecutablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
+    @executablePath = "#{nodeExecutablePath} #{jshintExecutablePath}"
+
 
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
+    atom.config.unobserve 'linter-jshint.nodeExecutablePath'
 
 module.exports = LinterJshint
