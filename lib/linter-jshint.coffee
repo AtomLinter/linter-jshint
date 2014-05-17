@@ -39,7 +39,7 @@ class LinterJshint extends Linter
         message: message.$.message
         line: message.$.line
         col: message.$.column
-        range: new Range([message.$.line - 1, message.$.column], [message.$.line - 1, message.$.column + 1])
+        range: new Range([message.$.line - 1, message.$.column], [message.$.line, 0])
         level: message.$.severity
         linter: @linterName
       callback? messages if messages?
