@@ -1,4 +1,8 @@
-linterPath = atom.packages.getLoadedPackage("linter").path
+{parseString} = require 'xml2js'
+
+{Range} = require 'atom'
+
+linterPath = atom.packages.getLoadedPackage('linter').path
 Linter = require "#{linterPath}/lib/linter"
 findFile = require "#{linterPath}/lib/util"
 
@@ -9,19 +13,9 @@ class LinterJshint extends Linter
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
-  cmd: 'jshint --verbose --extract=auto'
+  cmd: 'jshint --reporter=checkstyle'
 
   linterName: 'jshint'
-
-  # A regex pattern used to extract information from the executable's output.
-  regex:
-    '((?<fail>ERROR: .+)|' +
-    '.+?: line (?<line>[0-9]+), col (?<col>[0-9]+), ' +
-    '(?<message>.+) ' +
-    # capture error, warning and code
-    '\\(((?<error>E)|(?<warning>W))(?<code>[0-9]+)\\)'+
-    # '\\((?<warning>.).+\\)'
-    ')'
 
   isNodeExecutable: yes
 
@@ -36,7 +30,19 @@ class LinterJshint extends Linter
 
   formatShellCmd: =>
     jshintExecutablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
-    @executablePath = "#{jshintExecutablePath}"
+    @executablePath = jshintExecutablePath
+
+  processMessage: (xml, callback) ->
+    parseString xml, (err, messagesUnprocessed) =>
+      return err if err
+      messages = messagesUnprocessed.checkstyle.file[0].error.map (message) =>
+        message: message.$.message
+        line: message.$.line
+        col: message.$.column
+        range: new Range([message.$.line - 1, message.$.column], [message.$.line - 1, message.$.column + 1])
+        level: message.$.severity
+        linter: @linterName
+      callback messages
 
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
