@@ -42,7 +42,7 @@ class LinterJshint extends Linter
         range: new Range([message.$.line - 1, message.$.column], [message.$.line - 1, message.$.column + 1])
         level: message.$.severity
         linter: @linterName
-      callback messages
+      callback? messages if messages?
 
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
