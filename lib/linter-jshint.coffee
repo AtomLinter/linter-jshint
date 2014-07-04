@@ -19,7 +19,7 @@ class LinterJshint extends Linter
     '.+?: line (?<line>[0-9]+), col (?<col>[0-9]+), ' +
     '(?<message>.+) ' +
     # capture error, warning and code
-    '\\(((?<error>E)|(?<warning>W))(?<code>[0-9]+)\\)'+
+    '\\(((?<error>E)|(?<warning>W)|(?<level>I))(?<code>[0-9]+)\\)'+
     ')'
 
   isNodeExecutable: yes
