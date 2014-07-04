@@ -38,6 +38,9 @@ class LinterJshint extends Linter
     jshintExecutablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
     @executablePath = "#{jshintExecutablePath}"
 
+  formatMessage: (match) ->
+    "#{match.message} (#{match.type}#{match.code})"
+
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
 
