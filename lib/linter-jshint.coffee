@@ -13,6 +13,8 @@ class LinterJshint extends Linter
 
   linterName: 'jshint'
 
+  defaultLevel: 'info'
+
   # A regex pattern used to extract information from the executable's output.
   regex:
     '((?<fail>ERROR: .+)|' +
