@@ -9,7 +9,7 @@ class LinterJshint extends Linter
 
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
-  cmd: 'jshint --verbose --extract=auto'
+  cmd: ['jshint', '--verbose', '--extract=auto']
 
   linterName: 'jshint'
 
@@ -30,7 +30,7 @@ class LinterJshint extends Linter
 
     config = findFile @cwd, ['.jshintrc']
     if config
-      @cmd += " -c #{config}"
+      @cmd = @cmd.concat ['-c', config]
 
     atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
 
