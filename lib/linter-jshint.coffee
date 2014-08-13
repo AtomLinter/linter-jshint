@@ -7,10 +7,6 @@ class LinterJshint extends Linter
   # list/tuple of strings. Names should be all lowercase.
   @syntax: ['source.js', 'source.js.jquery', 'text.html.basic']
 
-  # A string, list, tuple or callable that returns a string, list or tuple,
-  # containing the command line (with arguments) used to lint.
-  cmd: 'jshint --verbose --extract=auto'
-
   linterName: 'jshint'
 
   # A regex pattern used to extract information from the executable's output.
@@ -28,14 +24,18 @@ class LinterJshint extends Linter
   constructor: (editor) ->
     super(editor)
 
-    config = findFile @cwd, ['.jshintrc']
-    if config
-      @cmd += " -c #{config}"
-
     atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
+    atom.config.observe 'linter-jshint.jshintExecutable', @formatShellCmd
+
+    @formatShellCmd()
 
   formatShellCmd: =>
     jshintExecutablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
+    jshintExecutable = atom.config.get 'linter-jshint.jshintExecutable'
+    @cmd = "#{jshintExecutable} --verbose --extract=auto"
+    config = findFile @cwd, ['.jshintrc']
+    if config
+      @cmd += " -c #{config}"
     @executablePath = "#{jshintExecutablePath}"
 
   destroy: ->
