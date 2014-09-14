@@ -13,6 +13,8 @@ class LinterJshint extends Linter
 
   linterName: 'jshint'
 
+  # force the defaultLevel to info which will map to the generic css class .highlight-info which is blue
+  # not red (error) nor brown - orange (warning)
   defaultLevel: 'info'
 
   # A regex pattern used to extract information from the executable's output.
