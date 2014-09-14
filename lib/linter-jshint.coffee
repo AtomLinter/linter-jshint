@@ -40,15 +40,10 @@ class LinterJshint extends Linter
     @executablePath = "#{jshintExecutablePath}"
 
   formatMessage: (match) ->
-    type = if match.error
-      "E"
-    else if match.warning
-      "W"
-    else
+    unless match.type
       warn "Regex does not match lint output", match
-      ""
 
-    "#{match.message} (#{type}#{match.code})"
+    "#{match.message} (#{match.type}#{match.code})"
 
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
