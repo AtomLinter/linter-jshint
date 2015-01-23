@@ -11,6 +11,6 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "jshint": "~2.5.0"
+    "jshint": "~2.6.0"
   }
 }
