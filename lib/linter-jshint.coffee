@@ -28,8 +28,12 @@ class LinterJshint extends Linter
     super(editor)
 
     config = findFile @cwd, ['.jshintrc']
+    ignore = findFile @cwd, ['.jshintignore']
     if config
       @cmd = @cmd.concat ['-c', config]
+
+    if ignore
+      @cmd = @cmd.concat ['--exclude-path', ignore]
 
     atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
 
