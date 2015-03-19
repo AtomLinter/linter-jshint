@@ -7,5 +7,10 @@ module.exports =
       title: 'JSHint Executable Path'
       type: 'string'
 
+    disableWhenNoJshintrcFileInPath:
+      default: false
+      title: 'Disable when no .jshintrc file found in path'
+      type: 'boolean'
+
   activate: ->
     console.log 'activate linter-jshint'
