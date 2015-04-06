@@ -3,7 +3,7 @@
   "main": "./lib/init",
   "linter-package": true,
   "activationEvents": [],
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
