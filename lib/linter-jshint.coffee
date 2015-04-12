@@ -13,13 +13,17 @@ class LinterJshint extends Linter
 
   linterName: 'jshint'
 
+  # force the defaultLevel to info which will map to the generic css class .highlight-info which is blue
+  # not red (error) nor brown - orange (warning)
+  defaultLevel: 'info'
+
   # A regex pattern used to extract information from the executable's output.
   regex:
     '((?<fail>ERROR: .+)|' +
     '.+?: line (?<line>[0-9]+), col (?<col>[0-9]+), ' +
     '(?<message>.+) ' +
     # capture error, warning and code
-    '\\(((?<error>E)|(?<warning>W))(?<code>[0-9]+)\\)'+
+    '\\((?<type>(?<error>E)|(?<warning>W)|(?<level>I))(?<code>[0-9]+)\\)'+
     ')'
 
   isNodeExecutable: yes
@@ -38,15 +42,10 @@ class LinterJshint extends Linter
     @executablePath = "#{jshintExecutablePath}"
 
   formatMessage: (match) ->
-    type = if match.error
-      "E"
-    else if match.warning
-      "W"
-    else
+    unless match.type
       warn "Regex does not match lint output", match
-      ""
 
-    "#{match.message} (#{type}#{match.code})"
+    "#{match.message} (#{match.type}#{match.code})"
 
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
