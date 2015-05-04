@@ -7,6 +7,8 @@ class LinterJshint extends Linter
   # list/tuple of strings. Names should be all lowercase.
   @syntax: 'source.js'
 
+  disableWhenNoJshintrcFileInPath: false
+
   # A string, list, tuple or callable that returns a string, list or tuple,
   # containing the command line (with arguments) used to lint.
   cmd: ['jshint', '--verbose', '--extract=auto']
@@ -41,6 +43,16 @@ class LinterJshint extends Linter
 
     atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
 
+    atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
+      (skipNonJshint) =>
+        @disableWhenNoJshintrcFileInPath = skipNonJshint
+
+  lintFile: (filePath, callback) ->
+    if not @config and @disableWhenNoJshintrcFileInPath
+      return
+
+    super(filePath, callback)
+
   formatShellCmd: =>
     jshintExecutablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
     @executablePath = "#{jshintExecutablePath}"
@@ -53,5 +65,7 @@ class LinterJshint extends Linter
 
   destroy: ->
     atom.config.unobserve 'linter-jshint.jshintExecutablePath'
+
+    atom.config.unobserve 'linter-jshint.disableWhenNoJshintrcFileInPath'
 
 module.exports = LinterJshint
