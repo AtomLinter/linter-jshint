@@ -52,6 +52,6 @@ class LinterJshint extends Linter
     "#{match.message} (#{match.type}#{match.code})"
 
   destroy: ->
-    atom.config.unobserve 'linter-jshint.jshintExecutablePath'
+    atom.config.dispose 'linter-jshint.jshintExecutablePath'
 
 module.exports = LinterJshint
