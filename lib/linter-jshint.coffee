@@ -1,6 +1,7 @@
 linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
 {findFile, warn} = require "#{linterPath}/lib/utils"
+{CompositeDisposable} = require "atom"
 
 class LinterJshint extends Linter
   # The syntax that the linter handles. May be a string or
@@ -33,6 +34,8 @@ class LinterJshint extends Linter
   constructor: (editor) ->
     super(editor)
 
+    @disposables = new CompositeDisposable
+
     config = findFile @cwd, ['.jshintrc']
     ignore = findFile @cwd, ['.jshintignore']
     if config
@@ -41,7 +44,7 @@ class LinterJshint extends Linter
     if ignore
       @cmd = @cmd.concat ['--exclude-path', ignore]
 
-    atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
+    @disposables.add atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
 
     atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
       (skipNonJshint) =>
@@ -64,7 +67,7 @@ class LinterJshint extends Linter
     "#{match.message} (#{match.type}#{match.code})"
 
   destroy: ->
-    atom.config.unobserve 'linter-jshint.jshintExecutablePath'
+    @disposables.dispose()
 
     atom.config.unobserve 'linter-jshint.disableWhenNoJshintrcFileInPath'
 
