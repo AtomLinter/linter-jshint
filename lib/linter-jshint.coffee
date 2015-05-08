@@ -45,8 +45,7 @@ class LinterJshint extends Linter
       @cmd = @cmd.concat ['--exclude-path', ignore]
 
     @disposables.add atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
-
-    atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
+    @disposables.add atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
       (skipNonJshint) =>
         @disableWhenNoJshintrcFileInPath = skipNonJshint
 
@@ -68,7 +67,5 @@ class LinterJshint extends Linter
 
   destroy: ->
     @disposables.dispose()
-
-    atom.config.unobserve 'linter-jshint.disableWhenNoJshintrcFileInPath'
 
 module.exports = LinterJshint
