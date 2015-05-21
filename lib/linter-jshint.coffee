@@ -66,6 +66,7 @@ class LinterJshint extends Linter
     "#{match.message} (#{match.type}#{match.code})"
 
   destroy: ->
+    super
     @disposables.dispose()
 
 module.exports = LinterJshint
