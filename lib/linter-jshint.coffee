@@ -1,3 +1,4 @@
+fs = require 'fs'
 linterPath = atom.packages.getLoadedPackage("linter").path
 Linter = require "#{linterPath}/lib/linter"
 {findFile, warn} = require "#{linterPath}/lib/utils"
@@ -44,6 +45,8 @@ class LinterJshint extends Linter
     if ignore
       @cmd = @cmd.concat ['--exclude-path', ignore]
 
+    @cmd = @cmd.concat ['--filename', @cwd]
+
     @disposables.add atom.config.observe 'linter-jshint.jshintExecutablePath', @formatShellCmd
     @disposables.add atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
       (skipNonJshint) =>
@@ -54,6 +57,19 @@ class LinterJshint extends Linter
       return
 
     super(filePath, callback)
+
+  beforeSpawnProcess: (command, args, options) ->
+
+    # replace filename (last arg) with "-".
+    # jshint requires "-" in order to use stdin.
+    args[args.length - 1] = '-';
+
+    return {command: command, args: args, options: options}
+
+  afterSpawnProcess: (process, command, args, options, filePath) ->
+
+    # pipe target file into child process stdin
+    fs.createReadStream(filePath).pipe(process.process.stdin)
 
   formatShellCmd: =>
     jshintExecutablePath = atom.config.get 'linter-jshint.jshintExecutablePath'
