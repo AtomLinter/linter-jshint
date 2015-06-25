@@ -36,10 +36,10 @@ class LinterJshint extends Linter
 
     @disposables = new CompositeDisposable
 
-    config = findFile @cwd, ['.jshintrc']
+    @config = findFile @cwd, ['.jshintrc']
     ignore = findFile @cwd, ['.jshintignore']
-    if config
-      @cmd = @cmd.concat ['-c', config]
+    if @config
+      @cmd = @cmd.concat ['-c', @config]
 
     if ignore
       @cmd = @cmd.concat ['--exclude-path', ignore]
