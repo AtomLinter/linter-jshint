@@ -19,6 +19,6 @@ module.exports =
             return {
               type: error.id.substr(1, error.id.length - 2)
               text: "#{error.code} - #{error.reason}"
-              filePath,
+              filePath
               range: [point, point]
             }
