@@ -1,5 +1,10 @@
 
 module.exports =
+  config:
+    jshintExecutablePath:
+      default: ''
+      type: 'string'
+      description: 'Leave empty to use bundled'
   provideLinter: ->
     jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint')
     helpers = require('atom-linter')
@@ -9,6 +14,7 @@ module.exports =
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) ->
+        exePath = atom.config.get('jshintExecutablePath') or jshintPath
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--extract', 'auto', '--filename', filePath, '-']
