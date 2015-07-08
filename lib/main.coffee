@@ -1,21 +1,5 @@
-{CompositeDisposable} =  require 'atom'
 
 module.exports =
-  config:
-    jshintExecutablePath:
-      default: ''
-      title: 'JSHint Executable Path'
-      type: 'string'
-      description: "Leave empty to use bundled"
-
-  activate: ->
-    @subscriptions = new CompositeDisposable
-    @subscriptions.add atom.config.observe 'linter-jshint.jshintExecutablePath', (value) =>
-      @executablePath = value
-
-  deactivate: ->
-    @subscriptions.dispose()
-
   provideLinter: ->
     helpers = require('atom-linter')
     provider =
