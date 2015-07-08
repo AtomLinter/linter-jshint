@@ -1,15 +1,20 @@
 {
   "name": "linter-jshint",
-  "main": "./lib/init",
-  "linter-package": true,
+  "main": "./lib/main",
   "version": "0.1.7",
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
-  "engines": {
-    "atom": ">0.50.0"
-  },
   "dependencies": {
-    "jshint": "^2.8"
+    "atom-linter": "^1.0.0",
+    "jshint": "^2.8",
+    "jshint-json": "^1.0.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
   }
 }
