@@ -15,10 +15,11 @@ module.exports =
         return helpers.exec(jshintPath, parameters, {stdin: text}).then (output) ->
           return JSON.parse(output).result.filter((entry) -> entry.error.id).map (entry) ->
             error = entry.error
-            point = [error.line - 1, error.character - 1]
+            pointStart = [error.line - 1, error.character - 1]
+            pointEnd = [error.line - 1, error.character]
             return {
               type: error.id.substr(1, error.id.length - 2)
               text: "#{error.code} - #{error.reason}"
               filePath
-              range: [point, point]
+              range: [pointStart, pointEnd]
             }
