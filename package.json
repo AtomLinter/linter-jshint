@@ -1,6 +1,6 @@
 {
   "name": "linter-jshint",
-  "main": "./lib/init",
+  "main": "./lib/main",
   "version": "0.1.7",
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
