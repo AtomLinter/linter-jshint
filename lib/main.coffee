@@ -3,7 +3,7 @@ path = require 'path'
 module.exports =
   config:
     jshintExecutablePath:
-      default: path.join __dirname, '..', 'node_modules', 'jshint', 'bin'
+      default: ''
       title: 'JSHint Executable Path'
       type: 'string'
 
@@ -12,8 +12,6 @@ module.exports =
       title: 'Disable when no .jshintrc file found in path'
       type: 'boolean'
 
-  activate: ->
-    console.log 'activate linter-jshint'
   provideLinter: ->
     provider =
       grammarScopes: ['source.js']
