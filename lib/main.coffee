@@ -5,7 +5,7 @@ module.exports =
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
     provider =
-      grammarScopes: ['source.js']
+      grammarScopes: ['source.js', 'source.js.jsx']
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) ->
