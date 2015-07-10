@@ -14,11 +14,11 @@ module.exports =
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) ->
-        exePath = atom.config.get('jshintExecutablePath') or jshintPath
+        exePath = atom.config.get('linter-jshint.jshintExecutablePath') or jshintPath
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--extract', 'auto', '--filename', filePath, '-']
-        return helpers.exec(jshintPath, parameters, {stdin: text}).then (output) ->
+        return helpers.exec(exePath, parameters, {stdin: text}).then (output) ->
           return JSON.parse(output).result.filter((entry) -> entry.error.id).map (entry) ->
             error = entry.error
             pointStart = [error.line - 1, error.character - 1]
