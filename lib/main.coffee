@@ -6,7 +6,10 @@ module.exports =
       type: 'string'
       description: 'Leave empty to use bundled'
   provideLinter: ->
-    jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint')
+    if process.platform is 'win32'
+      jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint.cmd')
+    else
+      jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint')
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
     provider =
