@@ -14,7 +14,7 @@ module.exports =
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) ->
-        exePath = atom.config.get('linter-jshint.jshintExecutablePath') or jshintPath
+        exePath = atom.config.get('linter-jshint.jshintExecutablePath') || jshintPath
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--extract', 'auto', '--filename', filePath, '-']
