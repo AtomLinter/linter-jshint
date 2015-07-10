@@ -19,7 +19,9 @@ module.exports =
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--extract', 'auto', '--filename', filePath, '-']
         return helpers.exec(exePath, parameters, {stdin: text}).then (output) ->
-          return JSON.parse(output).result.filter((entry) -> entry.error.id).map (entry) ->
+          output = JSON.parse(output).result
+          output = output.filter((entry) -> entry.error.id)
+          return output.map (entry) ->
             error = entry.error
             pointStart = [error.line - 1, error.character - 1]
             pointEnd = [error.line - 1, error.character]
