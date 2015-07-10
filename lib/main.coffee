@@ -33,8 +33,9 @@ module.exports =
             error = entry.error
             pointStart = [error.line - 1, error.character - 1]
             pointEnd = [error.line - 1, error.character]
+            type = error.code.substr(0, 1)
             return {
-              type: error.id.substr(1, error.id.length - 2)
+              type: if type is 'E' then 'Error' else if type is 'W' then 'Warning' else 'Info'
               text: "#{error.code} - #{error.reason}"
               filePath
               range: [pointStart, pointEnd]
