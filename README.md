@@ -36,4 +36,4 @@ Please note that modifications should follow these coding guidelines:
 Thank you for helping out!
 
 ## Donation
-[![Share the love!](https://chewbacco-stuff.s3.amazonaws.com/donate.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KXUYS4ARNHCN8)
+[![Share the love!](https://s3-eu-west-1.amazonaws.com/atom-linter/we-need-your-help.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KXUYS4ARNHCN8)
