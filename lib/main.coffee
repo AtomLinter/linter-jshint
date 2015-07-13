@@ -25,7 +25,8 @@ module.exports =
           try
             output = JSON.parse(output).result
           catch error
-            atom.notifications.addError("Invalid Result recieved from JSHint", {detail: "Check your console for more info", dismissible: true})
+            atom.notifications.addError("Invalid Result recieved from JSHint",
+              {detail: "Check your console for more info. It's a known bug on OSX. See https://github.com/AtomLinter/Linter/issues/726", dismissable: true})
             console.log('JSHint Result:', output)
             return []
           output = output.filter((entry) -> entry.error.id)
