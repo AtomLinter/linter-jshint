@@ -29,9 +29,10 @@ module.exports =
         exePath = atom.config.get('linter-jshint.jshintExecutablePath') || jshintPath
         filePath = textEditor.getPath()
         text = textEditor.getText()
-        parameters = ['--reporter', reporter, '--filename', filePath, '-']
+        parameters = ['--reporter', reporter, '--filename', filePath]
         if lintInlineJavaScript is true and ~textEditor.getGrammar().scopeName.indexOf 'text.html'
-          parameters.splice(2, 0, '--extract', 'always')
+          parameters.push('--extract', 'always')
+        parameters.push('-')
         return helpers.exec(exePath, parameters, {stdin: text}).then (output) ->
           try
             output = JSON.parse(output).result
