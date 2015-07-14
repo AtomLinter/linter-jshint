@@ -5,15 +5,23 @@ module.exports =
       default: ''
       type: 'string'
       description: 'Leave empty to use bundled'
+    lintInlineJavaScript:
+      type: 'boolean'
+      default: false
+      description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files'
+
   provideLinter: ->
     if process.platform is 'win32'
       jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint.cmd')
     else
       jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint')
+    scopes = ['source.js', 'source.js.jsx']
+    if atom.config.get('linter-jshint.lintInlineJavaScript') is true
+      scopes.push('source.js.embedded.html')
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
     provider =
-      grammarScopes: ['source.js', 'source.js.jsx']
+      grammarScopes: scopes
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) ->
