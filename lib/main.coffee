@@ -16,7 +16,8 @@ module.exports =
     else
       jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint')
     scopes = ['source.js', 'source.js.jsx']
-    if atom.config.get('linter-jshint.lintInlineJavaScript') is true
+    lintInlineJavaScript = atom.config.get('linter-jshint.lintInlineJavaScript')
+    if lintInlineJavaScript is true
       scopes.push('source.js.embedded.html')
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
@@ -28,7 +29,9 @@ module.exports =
         exePath = atom.config.get('linter-jshint.jshintExecutablePath') || jshintPath
         filePath = textEditor.getPath()
         text = textEditor.getText()
-        parameters = ['--reporter', reporter, '--extract', 'auto', '--filename', filePath, '-']
+        parameters = ['--reporter', reporter, '--filename', filePath, '-']
+        if lintInlineJavaScript is true and ~textEditor.getGrammar().scopeName.indexOf 'text.html'
+          parameters.splice(2, 0, '--extract', 'always')
         return helpers.exec(exePath, parameters, {stdin: text}).then (output) ->
           try
             output = JSON.parse(output).result
