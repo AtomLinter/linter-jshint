@@ -1,3 +1,4 @@
+{CompositeDisposable} = require 'atom'
 
 module.exports =
   config:
@@ -10,19 +11,27 @@ module.exports =
       default: false
       description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files'
 
+  activate: ->
+    @scopes = []
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.config.observe 'linter-jshint.lintInlineJavaScript',
+      (lintInlineJavaScript) =>
+        @scopes = ['source.js', 'source.js.jsx']
+        if lintInlineJavaScript is true
+          @scopes.push('source.js.embedded.html')
+
+  deactivate: ->
+    @subscriptions.dispose()
+
   provideLinter: ->
     if process.platform is 'win32'
       jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint.cmd')
     else
       jshintPath = require('path').join(__dirname, '..', 'node_modules', '.bin', 'jshint')
-    scopes = ['source.js', 'source.js.jsx']
-    lintInlineJavaScript = atom.config.get('linter-jshint.lintInlineJavaScript')
-    if lintInlineJavaScript is true
-      scopes.push('source.js.embedded.html')
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
     provider =
-      grammarScopes: scopes
+      grammarScopes: @scopes
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) ->
@@ -30,7 +39,7 @@ module.exports =
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
-        if lintInlineJavaScript is true and ~textEditor.getGrammar().scopeName.indexOf 'text.html'
+        if @scopes? and 'source.js.embedded.html' in @scopes
           parameters.push('--extract', 'always')
         parameters.push('-')
         return helpers.exec(exePath, parameters, {stdin: text}).then (output) ->
