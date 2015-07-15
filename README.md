@@ -15,8 +15,10 @@ $ apm install linter-jshint
 You can configure linter-jshint by editing ~/.atom/config.cson (choose Open Your Config in Atom menu):
 ```coffee
 'linter-jshint':
-  jshintExecutablePath: (default: null) 'jsHint path. Run `which jshint` to find the path'
-  lintInlineJavaScript: (default: false) 'Lint JavaScript inside `<script>` blocks in HTML or PHP files'
+  # Path of the `jshint` executable
+  executablePath: '/path/to/bundled/jshint'
+  # Lint JavaScript inside `<script>` blocks in HTML or PHP files
+  lintInlineJavaScript: false
 ```
 
 ## Contributing
