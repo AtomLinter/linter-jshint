@@ -12,13 +12,15 @@ module.exports =
       description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files'
 
   activate: ->
-    @scopes = []
+    scopeEmbedded = 'source.js.embedded.html'
+    @scopes = ['source.js', 'source.js.jsx']
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-jshint.lintInlineJavaScript',
       (lintInlineJavaScript) =>
-        @scopes = ['source.js', 'source.js.jsx']
-        if lintInlineJavaScript is true
-          @scopes.push('source.js.embedded.html')
+        if lintInlineJavaScript
+          @scopes.push(scopeEmbedded) unless scopeEmbedded in @scopes
+        else
+          @scopes.splice(@scopes.indexOf(scopeEmbedded), 1) if scopeEmbedded in @scopes
 
   deactivate: ->
     @subscriptions.dispose()
@@ -34,12 +36,12 @@ module.exports =
       grammarScopes: @scopes
       scope: 'file'
       lintOnFly: true
-      lint: (textEditor) ->
+      lint: (textEditor) =>
         exePath = atom.config.get('linter-jshint.jshintExecutablePath') || jshintPath
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
-        if @scopes? and 'source.js.embedded.html' in @scopes
+        if textEditor.getGrammar().scopeName.indexOf('text.html') isnt -1 and 'source.js.embedded.html' in @scopes
           parameters.push('--extract', 'always')
         parameters.push('-')
         return helpers.exec(exePath, parameters, {stdin: text}).then (output) ->
