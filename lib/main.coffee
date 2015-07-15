@@ -5,14 +5,14 @@ jsHintName = if process.platform is 'win32' then 'jshint.cmd' else 'jshint'
 
 module.exports =
   config:
-    jshintExecutablePath:
+    executablePath:
       type: 'string'
       default: path.join(__dirname, '..', 'node_modules', '.bin', jsHintName)
-      description: 'Path of the `jshint` executable'
+      description: 'Path of the `jshint` executable.'
     lintInlineJavaScript:
       type: 'boolean'
       default: false
-      description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files'
+      description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files.'
 
   activate: ->
     scopeEmbedded = 'source.js.embedded.html'
@@ -27,7 +27,6 @@ module.exports =
 
   deactivate: ->
     @subscriptions.dispose()
->>>>>>> f555936bcf73d7379cb6f377fa396dfb953872e7
 
   provideLinter: ->
     helpers = require('atom-linter')
@@ -37,7 +36,7 @@ module.exports =
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) =>
-        executablePath = atom.config.get('linter-jshint.jshintExecutablePath')
+        executablePath = atom.config.get('linter-jshint.executablePath')
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
@@ -48,8 +47,9 @@ module.exports =
           try
             output = JSON.parse(output).result
           catch error
-            atom.notifications.addError('Invalid result recieved from JSHint', {detail: 'Check your console for more informations', dismissible: true})
-            console.log('JSHint result:', output)
+            atom.notifications.addError("Invalid Result recieved from JSHint",
+              {detail: "Check your console for more info. It's a known bug on OSX. See https://github.com/AtomLinter/Linter/issues/726", dismissable: true})
+            console.log('JSHint Result:', output)
             return []
           output = output.filter((entry) -> entry.error.id)
           return output.map (entry) ->
