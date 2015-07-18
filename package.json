@@ -6,7 +6,7 @@
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
   "dependencies": {
-    "atom-linter": "^1.0.0",
+    "atom-linter": "^2.0.0",
     "jshint": "^2.8",
     "jshint-json": "^1.0.0"
   },
