@@ -13,9 +13,12 @@ module.exports =
       description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files.'
 
   activate: ->
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.config.observe 'linter-jshint.executablePath',
+      (executablePath) =>
+        @executablePath = executablePath
     scopeEmbedded = 'source.js.embedded.html'
     @scopes = ['source.js', 'source.js.jsx']
-    @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-jshint.lintInlineJavaScript',
       (lintInlineJavaScript) =>
         if lintInlineJavaScript
@@ -34,14 +37,13 @@ module.exports =
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) =>
-        executablePath = atom.config.get('linter-jshint.executablePath')
         filePath = textEditor.getPath()
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
         if textEditor.getGrammar().scopeName.indexOf('text.html') isnt -1 and 'source.js.embedded.html' in @scopes
           parameters.push('--extract', 'always')
         parameters.push('-')
-        return helpers.execNode(executablePath, parameters, {stdin: text}).then (output) ->
+        return helpers.execNode(@executablePath, parameters, {stdin: text}).then (output) ->
           try
             output = JSON.parse(output).result
           catch error
