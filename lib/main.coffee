@@ -11,6 +11,10 @@ module.exports =
       type: 'boolean'
       default: false
       description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files.'
+    disableWhenNoJshintrcFileInPath:
+      type: 'boolean'
+      default: false
+      description: 'Disable linter when no `.jshintrc` is found in project.'
 
   activate: ->
     @subscriptions = new CompositeDisposable
@@ -38,6 +42,11 @@ module.exports =
       lintOnFly: true
       lint: (textEditor) =>
         filePath = textEditor.getPath()
+
+        if atom.config.get('linter-jshint.disableWhenNoJshintrcFileInPath')
+          if !helpers.findFile(filePath, '.jshintrc')
+            return []
+
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
         if textEditor.getGrammar().scopeName.indexOf('text.html') isnt -1 and 'source.js.embedded.html' in @scopes
