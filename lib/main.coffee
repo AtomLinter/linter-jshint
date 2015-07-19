@@ -5,7 +5,7 @@ module.exports =
   config:
     executablePath:
       type: 'string'
-      default: path.join(__dirname, 'cli.js')
+      default: path.join(__dirname, '..', 'node_modules', 'jshint', 'bin', 'jshint')
       description: 'Path of the `jshint` executable.'
     lintInlineJavaScript:
       type: 'boolean'
