@@ -1,13 +1,11 @@
 {CompositeDisposable} = require 'atom'
-
 path = require 'path'
-jsHintName = if process.platform is 'win32' then 'jshint.cmd' else 'jshint'
 
 module.exports =
   config:
     executablePath:
       type: 'string'
-      default: path.join(__dirname, '..', 'node_modules', '.bin', jsHintName)
+      default: path.join(__dirname, 'cli.js')
       description: 'Path of the `jshint` executable.'
     lintInlineJavaScript:
       type: 'boolean'
@@ -43,7 +41,7 @@ module.exports =
         if textEditor.getGrammar().scopeName.indexOf('text.html') isnt -1 and 'source.js.embedded.html' in @scopes
           parameters.push('--extract', 'always')
         parameters.push('-')
-        return helpers.exec(executablePath, parameters, {stdin: text}).then (output) ->
+        return helpers.execNode(executablePath, parameters, {stdin: text}).then (output) ->
           try
             output = JSON.parse(output).result
           catch error
