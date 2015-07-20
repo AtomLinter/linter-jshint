@@ -5,17 +5,24 @@ module.exports =
   config:
     executablePath:
       type: 'string'
-      default: path.join(__dirname, 'cli.js')
+      default: path.join(__dirname, '..', 'node_modules', 'jshint', 'bin', 'jshint')
       description: 'Path of the `jshint` executable.'
     lintInlineJavaScript:
       type: 'boolean'
       default: false
       description: 'Lint JavaScript inside `<script>` blocks in HTML or PHP files.'
+    disableWhenNoJshintrcFileInPath:
+      type: 'boolean'
+      default: false
+      description: 'Disable linter when no `.jshintrc` is found in project.'
 
   activate: ->
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.config.observe 'linter-jshint.executablePath',
+      (executablePath) =>
+        @executablePath = executablePath
     scopeEmbedded = 'source.js.embedded.html'
     @scopes = ['source.js', 'source.js.jsx']
-    @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-jshint.lintInlineJavaScript',
       (lintInlineJavaScript) =>
         if lintInlineJavaScript
@@ -34,14 +41,18 @@ module.exports =
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) =>
-        executablePath = atom.config.get('linter-jshint.executablePath')
         filePath = textEditor.getPath()
+
+        if atom.config.get('linter-jshint.disableWhenNoJshintrcFileInPath')
+          if !helpers.findFile(filePath, '.jshintrc')
+            return []
+
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
         if textEditor.getGrammar().scopeName.indexOf('text.html') isnt -1 and 'source.js.embedded.html' in @scopes
           parameters.push('--extract', 'always')
         parameters.push('-')
-        return helpers.execNode(executablePath, parameters, {stdin: text}).then (output) ->
+        return helpers.execNode(@executablePath, parameters, {stdin: text}).then (output) ->
           try
             output = JSON.parse(output).result
           catch error
