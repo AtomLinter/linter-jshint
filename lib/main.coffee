@@ -29,6 +29,9 @@ module.exports =
           @scopes.push(scopeEmbedded) unless scopeEmbedded in @scopes
         else
           @scopes.splice(@scopes.indexOf(scopeEmbedded), 1) if scopeEmbedded in @scopes
+    @subscriptions.add atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
+      (disableWhenNoJshintrcFileInPath) =>
+        @disableWhenNoJshintrcFileInPath = disableWhenNoJshintrcFileInPath
 
   deactivate: ->
     @subscriptions.dispose()
@@ -42,9 +45,7 @@ module.exports =
       lintOnFly: true
       lint: (textEditor) =>
         filePath = textEditor.getPath()
-
-        if atom.config.get('linter-jshint.disableWhenNoJshintrcFileInPath')
-          if !helpers.findFile(filePath, '.jshintrc')
+        if @disableWhenNoJshintrcFileInPath and !helpers.findFile(filePath, '.jshintrc')
             return []
 
         text = textEditor.getText()
