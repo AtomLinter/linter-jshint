@@ -17,8 +17,10 @@ You can configure linter-jshint by editing ~/.atom/config.cson (choose Open Your
 'linter-jshint':
   # Path of the `jshint` executable
   executablePath: '/path/to/bundled/jshint'
+
   # Lint JavaScript inside `<script>` blocks in HTML or PHP files
   lintInlineJavaScript: false
+
   # Disable linter when no `.jshintrc` is found in project
   disableWhenNoJshintrcFileInPath: false
 ```
