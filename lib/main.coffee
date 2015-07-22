@@ -54,13 +54,10 @@ module.exports =
           parameters.push('--extract', 'always')
         parameters.push('-')
         return helpers.execNode(@executablePath, parameters, {stdin: text}).then (output) ->
-          try
-            output = JSON.parse(output).result
-          catch error
-            atom.notifications.addError("Invalid Result received from JSHint",
-              {detail: "Check your console for more info. It's a known bug on OSX. See https://github.com/AtomLinter/Linter/issues/726", dismissable: true})
-            console.log('JSHint Result:', output)
+          unless output.length
+            atom.notifications.addError("Error Executing JSHint executable", {detail: "It's a known bug on OSX. See https://github.com/AtomLinter/Linter/issues/726", dismissable: true})
             return []
+          output = JSON.parse(output).result
           output = output.filter((entry) -> entry.error.id)
           return output.map (entry) ->
             error = entry.error
