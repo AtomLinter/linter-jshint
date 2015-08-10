@@ -1,7 +1,7 @@
 {
   "name": "linter-jshint",
   "main": "./lib/main",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
