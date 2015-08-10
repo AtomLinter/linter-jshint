@@ -22,7 +22,7 @@ module.exports =
       (executablePath) =>
         @executablePath = executablePath
     scopeEmbedded = 'source.js.embedded.html'
-    @scopes = ['source.js', 'source.js.jsx']
+    @scopes = ['source.js', 'source.js.jsx', 'source.js-semantic']
     @subscriptions.add atom.config.observe 'linter-jshint.lintInlineJavaScript',
       (lintInlineJavaScript) =>
         if lintInlineJavaScript
