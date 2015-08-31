@@ -55,7 +55,6 @@ module.exports =
         parameters.push('-')
         return helpers.execNode(@executablePath, parameters, {stdin: text}).then (output) ->
           unless output.length
-            atom.notifications.addError("Error Executing JSHint executable", {detail: "It's a known bug on OSX. See https://github.com/AtomLinter/Linter/issues/726", dismissable: true})
             return []
           output = JSON.parse(output).result
           output = output.filter((entry) -> entry.error.id)
