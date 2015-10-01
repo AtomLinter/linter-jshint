@@ -40,6 +40,7 @@ module.exports =
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
     provider =
+      name: 'JSHint'
       grammarScopes: @scopes
       scope: 'file'
       lintOnFly: true
