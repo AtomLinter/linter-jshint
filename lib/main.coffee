@@ -40,13 +40,14 @@ module.exports =
     helpers = require('atom-linter')
     reporter = require('jshint-json') # a string path
     provider =
+      name: 'JSHint'
       grammarScopes: @scopes
       scope: 'file'
       lintOnFly: true
       lint: (textEditor) =>
         filePath = textEditor.getPath()
-        if @disableWhenNoJshintrcFileInPath and !helpers.findFile(filePath, '.jshintrc')
-            return []
+        if @disableWhenNoJshintrcFileInPath and not helpers.findFile(filePath, '.jshintrc')
+          return []
 
         text = textEditor.getText()
         parameters = ['--reporter', reporter, '--filename', filePath]
