@@ -46,7 +46,7 @@ module.exports =
       lintOnFly: true
       lint: (textEditor) =>
         filePath = textEditor.getPath()
-        if @disableWhenNoJshintrcFileInPath and not helpers.findFile(filePath, '.jshintrc')
+        if @disableWhenNoJshintrcFileInPath and not helpers.find(filePath, '.jshintrc')
           return []
 
         text = textEditor.getText()
