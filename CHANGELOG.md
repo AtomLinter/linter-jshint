@@ -1,7 +1,26 @@
 # Change Log
 
-## [1.2.2](https://github.com/AtomLinter/linter-jshint/tree/1.2.2) (2015-12-30)
-[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.2.1...1.2.2)
+## [1.3.0](https://github.com/AtomLinter/linter-jshint/tree/1.3.0) (2016-02-01)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.2.2...1.3.0)
+
+**Implemented enhancements:**
+
+- Running on \*.jsx pages [\#24](https://github.com/AtomLinter/linter-jshint/issues/24)
+- Add lintJSXFiles config [\#199](https://github.com/AtomLinter/linter-jshint/pull/199) ([steelbrain](https://github.com/steelbrain))
+
+**Closed issues:**
+
+- Single missing comma causes 2 errors and 5 warnings [\#186](https://github.com/AtomLinter/linter-jshint/issues/186)
+
+**Merged pull requests:**
+
+- atom-linter@4.3.4 untested ⚠️ [\#198](https://github.com/AtomLinter/linter-jshint/pull/198) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- jshint@2.9.1 untested ⚠️ [\#194](https://github.com/AtomLinter/linter-jshint/pull/194) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.3.1 untested ⚠️ [\#188](https://github.com/AtomLinter/linter-jshint/pull/188) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.3.0 untested ⚠️ [\#185](https://github.com/AtomLinter/linter-jshint/pull/185) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v1.2.2](https://github.com/AtomLinter/linter-jshint/tree/v1.2.2) (2015-12-31)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.2.1...v1.2.2)
 
 **Merged pull requests:**
 
@@ -317,7 +336,6 @@
 - This isn't a bug... it's a thank you. [\#43](https://github.com/AtomLinter/linter-jshint/issues/43)
 - Uncaught TypeError: Arguments to path.join must be strings [\#41](https://github.com/AtomLinter/linter-jshint/issues/41)
 - Add code in message to help developer [\#27](https://github.com/AtomLinter/linter-jshint/issues/27)
-- Running on \*.jsx pages [\#24](https://github.com/AtomLinter/linter-jshint/issues/24)
 - Same error 2x [\#19](https://github.com/AtomLinter/linter-jshint/issues/19)
 
 **Merged pull requests:**
