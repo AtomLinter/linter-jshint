@@ -17,6 +17,7 @@ module.exports =
       description: 'Disable linter when no `.jshintrc` is found in project.'
     lintJSXFiles:
       title: 'Lint JSX Files'
+      type: 'boolean'
       default: false
 
   activate: ->
