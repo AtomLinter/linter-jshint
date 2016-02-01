@@ -15,20 +15,35 @@ module.exports =
       type: 'boolean'
       default: false
       description: 'Disable linter when no `.jshintrc` is found in project.'
+    lintJSXFiles:
+      title: 'Lint JSX Files'
+      type: 'boolean'
+      default: false
 
   activate: ->
     @subscriptions = new CompositeDisposable
     @subscriptions.add atom.config.observe 'linter-jshint.executablePath',
       (executablePath) =>
         @executablePath = executablePath
-    scopeEmbedded = 'source.js.embedded.html'
+
     @scopes = ['source.js', 'source.js.jsx', 'source.js-semantic']
+
+    scopeEmbedded = 'source.js.embedded.html'
     @subscriptions.add atom.config.observe 'linter-jshint.lintInlineJavaScript',
       (lintInlineJavaScript) =>
         if lintInlineJavaScript
-          @scopes.push(scopeEmbedded) unless scopeEmbedded in @scopes
+          @scopes.push(scopeEmbedded)
         else
           @scopes.splice(@scopes.indexOf(scopeEmbedded), 1) if scopeEmbedded in @scopes
+
+    scopeJSX = 'source.js.jsx'
+    @subscriptions.add atom.config.observe 'linter-jshint.lintJSXFiles',
+      (lintJSXFiles) =>
+        if lintJSXFiles
+          @scopes.push(scopeJSX)
+        else
+          @scopes.splice(@scopes.indexOf(scopeJSX), 1) if lintJSXFiles in @scopes
+
     @subscriptions.add atom.config.observe 'linter-jshint.disableWhenNoJshintrcFileInPath',
       (disableWhenNoJshintrcFileInPath) =>
         @disableWhenNoJshintrcFileInPath = disableWhenNoJshintrcFileInPath
