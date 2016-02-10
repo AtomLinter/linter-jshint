@@ -76,12 +76,22 @@ module.exports =
           output = output.filter((entry) -> entry.error.id)
           return output.map (entry) ->
             error = entry.error
-            pointStart = [error.line - 1, error.character - 1]
-            pointEnd = [error.line - 1, error.character]
+            line = error.line - 1
+            # First, check if we are hitting jshint GH2846
+            # TODO: Remove when JSHint > 2.9.1 is released
+            if error.character?
+              col = error.character
+              # Now check if we are hitting esprima GH1457
+              # TODO: Remove when JSHint uses esprima > 2.7.2
+              maxCol = textEditor.getBuffer().lineLengthForRow(line)
+              col = maxCol if col > maxCol
+              range = helpers.rangeFromLineNumber(textEditor, line, col)
+            else
+              range = helpers.rangeFromLineNumber(textEditor, line)
             type = error.code.substr(0, 1)
             return {
               type: if type is 'E' then 'Error' else if type is 'W' then 'Warning' else 'Info'
               text: "#{error.code} - #{error.reason}"
               filePath
-              range: [pointStart, pointEnd]
+              range
             }
