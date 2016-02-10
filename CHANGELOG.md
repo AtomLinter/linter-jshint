@@ -1,7 +1,25 @@
 # Change Log
 
-## [1.3.0](https://github.com/AtomLinter/linter-jshint/tree/1.3.0) (2016-02-01)
-[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.2.2...1.3.0)
+## [1.3.1](https://github.com/AtomLinter/linter-jshint/tree/1.3.1) (2016-02-10)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.3.0...1.3.1)
+
+**Implemented enhancements:**
+
+- Workaround jshint end column bugs [\#203](https://github.com/AtomLinter/linter-jshint/issues/203)
+- Workaround column bugs [\#204](https://github.com/AtomLinter/linter-jshint/pull/204) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Closed issues:**
+
+- ES6 [\#202](https://github.com/AtomLinter/linter-jshint/issues/202)
+- Cannot use custom config .jshintrc [\#201](https://github.com/AtomLinter/linter-jshint/issues/201)
+- Its not using the .jshintrc in project root [\#177](https://github.com/AtomLinter/linter-jshint/issues/177)
+
+**Merged pull requests:**
+
+- atom-linter@4.4.0 untested ⚠️ [\#200](https://github.com/AtomLinter/linter-jshint/pull/200) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v1.3.0](https://github.com/AtomLinter/linter-jshint/tree/v1.3.0) (2016-02-01)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.2.2...v1.3.0)
 
 **Implemented enhancements:**
 
