@@ -1,7 +1,18 @@
 # Change Log
 
-## [1.3.1](https://github.com/AtomLinter/linter-jshint/tree/1.3.1) (2016-02-10)
-[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.3.0...1.3.1)
+## [2.0.0](https://github.com/AtomLinter/linter-jshint/tree/2.0.0) (2016-02-15)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.3.1...2.0.0)
+
+**Implemented enhancements:**
+
+- Rewrite in ES6+ [\#210](https://github.com/AtomLinter/linter-jshint/pull/210) ([steelbrain](https://github.com/steelbrain))
+
+**Merged pull requests:**
+
+- atom-linter@4.5.0 untested ⚠️ [\#208](https://github.com/AtomLinter/linter-jshint/pull/208) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v1.3.1](https://github.com/AtomLinter/linter-jshint/tree/v1.3.1) (2016-02-10)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.3.0...v1.3.1)
 
 **Implemented enhancements:**
 
