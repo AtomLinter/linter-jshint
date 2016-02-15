@@ -22,7 +22,8 @@
         "never"
       ],
       "no-console": 0,
-      "semi": [2, "never"]
+      "semi": [2, "never"],
+      "no-nested-ternary": 0
     },
     "extends": "airbnb/base",
     "parser": "babel-eslint",
