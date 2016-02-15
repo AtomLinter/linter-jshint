@@ -1,7 +1,7 @@
 {
   "name": "linter-jshint",
   "main": "./lib/main",
-  "version": "1.3.1",
+  "version": "2.0.0",
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
@@ -22,7 +22,10 @@
         "never"
       ],
       "no-console": 0,
-      "semi": [2, "never"],
+      "semi": [
+        2,
+        "never"
+      ],
       "no-nested-ternary": 0
     },
     "extends": "airbnb/base",
