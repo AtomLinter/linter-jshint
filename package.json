@@ -10,6 +10,31 @@
     "jshint": "^2.9.1",
     "jshint-json": "^1.0.0"
   },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "babel-eslint": "^4.1.8",
+    "eslint-config-airbnb": "^5.0.1"
+  },
+  "eslintConfig": {
+    "rules": {
+      "comma-dangle": [
+        2,
+        "never"
+      ],
+      "no-console": 0,
+      "semi": [2, "never"],
+      "no-nested-ternary": 0
+    },
+    "extends": "airbnb/base",
+    "parser": "babel-eslint",
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "es6": true,
+      "node": true
+    }
+  },
   "providedServices": {
     "linter": {
       "versions": {
