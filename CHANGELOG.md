@@ -1,7 +1,15 @@
 # Change Log
 
-## [2.0.1](https://github.com/AtomLinter/linter-jshint/tree/2.0.1) (2016-02-17)
-[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.0...2.0.1)
+## [v2.0.2](https://github.com/AtomLinter/linter-jshint/tree/v2.0.2) (2016-02-17)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.1...v2.0.2)
+
+**Fixed bugs:**
+
+- TypeError: Cannot read property 'length' of undefined [\#213](https://github.com/AtomLinter/linter-jshint/issues/213)
+- Don't go negative on line/col [\#220](https://github.com/AtomLinter/linter-jshint/pull/220) ([Arcanemagus](https://github.com/Arcanemagus))
+
+## [v2.0.1](https://github.com/AtomLinter/linter-jshint/tree/v2.0.1) (2016-02-17)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.0...v2.0.1)
 
 **Implemented enhancements:**
 
@@ -11,11 +19,11 @@
 
 **Fixed bugs:**
 
+- Stopped working with v2.0.0 [\#214](https://github.com/AtomLinter/linter-jshint/issues/214)
 - Add back a guard for the HTML JS extraction [\#219](https://github.com/AtomLinter/linter-jshint/pull/219) ([Arcanemagus](https://github.com/Arcanemagus))
 
 **Closed issues:**
 
-- Stopped working with v2.0.0 [\#214](https://github.com/AtomLinter/linter-jshint/issues/214)
 - gulpfile.babel.js error [\#209](https://github.com/AtomLinter/linter-jshint/issues/209)
 - No optional enable [\#161](https://github.com/AtomLinter/linter-jshint/issues/161)
 
