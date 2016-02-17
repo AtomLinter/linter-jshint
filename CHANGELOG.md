@@ -1,11 +1,39 @@
 # Change Log
 
-## [2.0.0](https://github.com/AtomLinter/linter-jshint/tree/2.0.0) (2016-02-15)
-[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.3.1...2.0.0)
+## [2.0.1](https://github.com/AtomLinter/linter-jshint/tree/2.0.1) (2016-02-17)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.0...2.0.1)
+
+**Implemented enhancements:**
+
+- Install `linter` automatically. [\#167](https://github.com/AtomLinter/linter-jshint/issues/167)
+- Setting to not lint .jsx files? [\#165](https://github.com/AtomLinter/linter-jshint/issues/165)
+- Automatically install linter [\#211](https://github.com/AtomLinter/linter-jshint/pull/211) ([steelbrain](https://github.com/steelbrain))
+
+**Fixed bugs:**
+
+- Add back a guard for the HTML JS extraction [\#219](https://github.com/AtomLinter/linter-jshint/pull/219) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Closed issues:**
+
+- Stopped working with v2.0.0 [\#214](https://github.com/AtomLinter/linter-jshint/issues/214)
+- gulpfile.babel.js error [\#209](https://github.com/AtomLinter/linter-jshint/issues/209)
+- No optional enable [\#161](https://github.com/AtomLinter/linter-jshint/issues/161)
+
+**Merged pull requests:**
+
+- Update babel-eslint to version 5.0.0 🚀 [\#217](https://github.com/AtomLinter/linter-jshint/pull/217) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-package-deps to version 4.0.1 🚀 [\#216](https://github.com/AtomLinter/linter-jshint/pull/216) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+## [v2.0.0](https://github.com/AtomLinter/linter-jshint/tree/v2.0.0) (2016-02-15)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.3.1...v2.0.0)
 
 **Implemented enhancements:**
 
 - Rewrite in ES6+ [\#210](https://github.com/AtomLinter/linter-jshint/pull/210) ([steelbrain](https://github.com/steelbrain))
+
+**Closed issues:**
+
+- Error: Invalid TextEditor provided Ubuntu x64 1.3.1 [\#205](https://github.com/AtomLinter/linter-jshint/issues/205)
 
 **Merged pull requests:**
 
@@ -39,6 +67,7 @@
 
 **Closed issues:**
 
+- Can get new setting for "hint on modify" [\#195](https://github.com/AtomLinter/linter-jshint/issues/195)
 - Single missing comma causes 2 errors and 5 warnings [\#186](https://github.com/AtomLinter/linter-jshint/issues/186)
 
 **Merged pull requests:**
@@ -50,6 +79,10 @@
 
 ## [v1.2.2](https://github.com/AtomLinter/linter-jshint/tree/v1.2.2) (2015-12-31)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v1.2.1...v1.2.2)
+
+**Closed issues:**
+
+- Red line highlight [\#173](https://github.com/AtomLinter/linter-jshint/issues/173)
 
 **Merged pull requests:**
 
