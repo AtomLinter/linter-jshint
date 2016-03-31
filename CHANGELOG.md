@@ -1,5 +1,13 @@
 # Change Log
 
+## [v2.0.4](https://github.com/AtomLinter/linter-jshint/tree/v2.0.4) (2016-03-31)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.3...v2.0.4)
+
+**Implemented enhancements:**
+
+- Provide a link to jslinterrors.com [\#247](https://github.com/AtomLinter/linter-jshint/pull/247) ([camlafit](https://github.com/camlafit))
+- Update babel-eslint to version 6.0.0 🚀 [\#244](https://github.com/AtomLinter/linter-jshint/pull/244) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v2.0.3](https://github.com/AtomLinter/linter-jshint/tree/v2.0.3) (2016-03-11)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.2...v2.0.3)
 
@@ -16,6 +24,7 @@
 
 **Closed issues:**
 
+- TypeError: Cannot read property 'length' of undefined [\#232](https://github.com/AtomLinter/linter-jshint/issues/232)
 - Failed to activate linter-jshint package [\#227](https://github.com/AtomLinter/linter-jshint/issues/227)
 
 ## [v2.0.2](https://github.com/AtomLinter/linter-jshint/tree/v2.0.2) (2016-02-17)
@@ -467,7 +476,7 @@
 
 **Merged pull requests:**
 
-- Added json to supported source languages [\#15](https://github.com/AtomLinter/linter-jshint/pull/15) ([jakekit](https://github.com/jakekit))
+- Added json to supported source languages [\#15](https://github.com/AtomLinter/linter-jshint/pull/15) ([kitch](https://github.com/kitch))
 
 ## [v0.0.15](https://github.com/AtomLinter/linter-jshint/tree/v0.0.15) (2014-05-16)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v0.0.14...v0.0.15)
