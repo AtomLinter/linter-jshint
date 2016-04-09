@@ -1,5 +1,20 @@
 # Change Log
 
+## [v2.1.0](https://github.com/AtomLinter/linter-jshint/tree/v2.1.0) (2016-04-08)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.4...v2.1.0)
+
+**Implemented enhancements:**
+
+- Provide explanation link to https://jslinterrors.com [\#246](https://github.com/AtomLinter/linter-jshint/issues/246)
+- eslint-plugin-react@4.3.0 untested ⚠️ [\#253](https://github.com/AtomLinter/linter-jshint/pull/253) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Allow the ability to specify a custom jshintrc file [\#252](https://github.com/AtomLinter/linter-jshint/pull/252) ([jhalickman](https://github.com/jhalickman))
+- eslint@2.7.0 untested ⚠️ [\#251](https://github.com/AtomLinter/linter-jshint/pull/251) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- babel-eslint@6.0.2 untested ⚠️ [\#249](https://github.com/AtomLinter/linter-jshint/pull/249) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Closed issues:**
+
+- Makes atom very slow [\#254](https://github.com/AtomLinter/linter-jshint/issues/254)
+
 ## [v2.0.4](https://github.com/AtomLinter/linter-jshint/tree/v2.0.4) (2016-03-31)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.3...v2.0.4)
 
