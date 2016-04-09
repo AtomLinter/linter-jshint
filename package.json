@@ -15,7 +15,7 @@
     "jshint-json": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^2.5.3",
+    "eslint": "^2.7.0",
     "babel-eslint": "^6.0.2",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.3.0"
