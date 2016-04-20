@@ -5,6 +5,10 @@
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
+  "scripts": {
+    "test": "npm run lint && apm test",
+    "lint": "eslint ."
+  },
   "package-deps": [
     "linter"
   ],
@@ -17,24 +21,19 @@
   "devDependencies": {
     "eslint": "^2.7.0",
     "babel-eslint": "^6.0.2",
-    "eslint-config-airbnb": "^7.0.0",
-    "eslint-plugin-react": "^4.3.0",
-    "eslint-plugin-jsx-a11y": "^0.6.2"
+    "eslint-config-airbnb-base": "^1.0.0",
+    "eslint-plugin-import": "^1.5.0"
   },
   "eslintConfig": {
     "rules": {
-      "comma-dangle": [
-        2,
-        "never"
-      ],
+      "comma-dangle": [2, "never"],
       "no-console": 0,
-      "semi": [
-        2,
-        "never"
-      ],
-      "no-nested-ternary": 0
+      "semi": [2, "never"],
+      "global-require": 0,
+      "no-nested-ternary": 0,
+      "import/no-unresolved": [2, { "ignore": ["atom"] }]
     },
-    "extends": "airbnb/base",
+    "extends": "airbnb-base",
     "parser": "babel-eslint",
     "globals": {
       "atom": true
