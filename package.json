@@ -19,7 +19,7 @@
     "babel-eslint": "^6.0.2",
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-react": "^4.3.0",
-    "eslint-plugin-jsx-a11y": "^0.6.2"
+    "eslint-plugin-jsx-a11y": "^1.0.1"
   },
   "eslintConfig": {
     "rules": {
