@@ -1,0 +1,37 @@
+# Project specific config
+language: node_js # For lint tools
+node_js: "5"
+
+os:
+  - linux
+  - osx
+
+env:
+  matrix:
+    - ATOM_CHANNEL=stable
+    - ATOM_CHANNEL=beta
+
+# Generic setup follows
+script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
+
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+git:
+  depth: 10
+
+sudo: false
+
+addons:
+  apt:
+    packages:
+    - build-essential
+    - git
+    - libgnome-keyring-dev
+    - fakeroot
+
+branches:
+  only:
+    - master
