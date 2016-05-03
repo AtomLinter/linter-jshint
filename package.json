@@ -1,13 +1,13 @@
 {
   "name": "linter-jshint",
-  "main": "./lib/main",
+  "main": "./lib/main.js",
   "version": "2.1.0",
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
   "scripts": {
-    "test": "npm run lint && apm test",
-    "lint": "eslint ."
+    "test": "apm test",
+    "lint": "eslint lib spec"
   },
   "package-deps": [
     "linter"
@@ -19,32 +19,19 @@
     "jshint-json": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^2.8.0",
+    "eslint": "^2.9.0",
     "babel-eslint": "^6.0.3",
-    "eslint-config-airbnb-base": "^1.0.0",
-    "eslint-plugin-import": "^1.5.0"
+    "eslint-config-airbnb-base": "^2.0.0",
+    "eslint-plugin-import": "^1.6.1"
   },
   "eslintConfig": {
     "rules": {
-      "comma-dangle": [
-        2,
-        "never"
-      ],
+      "comma-dangle": [2, "never"],
       "no-console": 0,
-      "semi": [
-        2,
-        "never"
-      ],
+      "semi": [2, "never"],
       "global-require": 0,
       "no-nested-ternary": 0,
-      "import/no-unresolved": [
-        2,
-        {
-          "ignore": [
-            "atom"
-          ]
-        }
-      ]
+      "import/no-unresolved": [2, {"ignore": ["atom"]}]
     },
     "extends": "airbnb-base",
     "parser": "babel-eslint",
