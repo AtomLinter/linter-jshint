@@ -42,7 +42,7 @@ describe('The JSHint provider for Linter', () => {
     })
 
     it('verifies the first message', () => {
-      const message = '<a href="http://jslinterrors.com/W016">W016</a>' +
+      const message = '<a href="https://jslinterrors.com/W016">W016</a>' +
         " - Unexpected use of '&'."
       waitsForPromise(() =>
         lint(editor).then(messages => {
