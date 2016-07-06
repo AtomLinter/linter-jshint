@@ -9,6 +9,9 @@ test:
   override:
     - atom -v
     - apm -v
-    - ./node_modules/.bin/eslint lib
-    - ./node_modules/.bin/eslint spec
+    - npm run lint
     - apm test
+
+machine:
+  node:
+    version: 6
