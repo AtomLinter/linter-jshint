@@ -1,7 +1,4 @@
 # Project specific config
-language: node_js # For lint tools
-node_js: "5"
-
 os:
   - linux
   - osx
@@ -10,6 +7,10 @@ env:
   matrix:
     - ATOM_CHANNEL=stable
     - ATOM_CHANNEL=beta
+
+# Installed for linting the project
+language: node_js
+node_js: "6"
 
 # Generic setup follows
 script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'

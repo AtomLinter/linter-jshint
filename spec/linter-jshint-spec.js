@@ -1,7 +1,7 @@
 'use babel'
 
-import linter from '../lib/main'
 import * as path from 'path'
+import linter from '../lib/main'
 
 const bitwisePath = path.join(__dirname, 'fixtures', 'bitwise', 'bitwise.js')
 const syntaxPath = path.join(__dirname, 'fixtures', 'syntax', 'badSyntax.js')
