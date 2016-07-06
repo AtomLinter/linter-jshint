@@ -27,24 +27,25 @@
   "eslintConfig": {
     "rules": {
       "comma-dangle": [
-        2,
+        "error",
         "never"
       ],
-      "no-console": 0,
+      "no-console": "off",
       "semi": [
-        2,
+        "error",
         "never"
       ],
-      "global-require": 0,
-      "no-nested-ternary": 0,
+      "global-require": "off",
+      "no-nested-ternary": "off",
       "import/no-unresolved": [
-        2,
+        "error",
         {
           "ignore": [
             "atom"
           ]
         }
-      ]
+      ],
+      "import/no-extraneous-dependencies": "off"
     },
     "extends": "airbnb-base",
     "parser": "babel-eslint",
