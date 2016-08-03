@@ -1,25 +1,27 @@
-version: "{build}"
 
-platform: x64
-
-branches:
-    only:
-      - master
-
-clone_depth: 10
-
-skip_tags: true
-
+# Project specific config
 environment:
+  APM_TEST_PACKAGES:
+
   matrix:
   - ATOM_CHANNEL: stable
   - ATOM_CHANNEL: beta
 
 install:
-  - ps: Install-Product node 6 # For lint tools
+  # Install Node.js to run any configured linters
+  - ps: Install-Product node 6
 
+# Generic setup follows
 build_script:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/atom/ci/master/build-package.ps1'))
+  - ps: iex ((new-object net.webclient).DownloadString('https://github.com/Arcanemagus/ci/raw/atomlinter/build-package.ps1'))
 
+branches:
+  only:
+    - master
+
+version: "{build}"
+platform: x64
+clone_depth: 10
+skip_tags: true
 test: off
 deploy: off
