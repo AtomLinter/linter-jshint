@@ -50,7 +50,7 @@ describe('The JSHint provider for Linter', () => {
           expect(messages[0].text).not.toBeDefined()
           expect(messages[0].html).toBe(message)
           expect(messages[0].filePath).toBe(bitwisePath)
-          expect(messages[0].range).toEqual([[0, 10], [0, 14]])
+          expect(messages[0].range).toEqual([[0, 10], [0, 13]])
         })
       )
     })
