@@ -1,23 +1,13 @@
-dependencies:
-  override:
-    - curl -L https://atom.io/download/deb -o atom-amd64.deb
-    - sudo dpkg --install atom-amd64.deb || true
-    - sudo apt-get update
-    - sudo apt-get -f install
-    - npm install
-
 test:
   override:
-    - npm run lint
-    # Remove the node_modules installed with the system npm to test real apm install
-    - rm -Rf node_modules
-    - atom -v
-    - apm -v
-    - apm install --production
-    # Now use npm to install the devDependencies (for specs)
-    - npm install
-    - apm test
+    - curl -s https://raw.githubusercontent.com/Arcanemagus/ci/atomlinter/build-package.sh | sh
+
+dependencies:
+  override:
+    - echo "Managed in the script"
 
 machine:
   node:
     version: 6
+  environment:
+    ATOM_LINT_WITH_BUNDLED_NODE: "false"
