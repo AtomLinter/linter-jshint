@@ -42,13 +42,12 @@ describe('The JSHint provider for Linter', () => {
     })
 
     it('verifies the first message', () => {
-      const message = '<a href="https://jslinterrors.com/W016">W016</a>' +
-        " - Unexpected use of '&'."
+      const message = "W016 - Unexpected use of '&'."
       waitsForPromise(() =>
         lint(editor).then((messages) => {
           expect(messages[0].type).toBe('Warning')
-          expect(messages[0].text).not.toBeDefined()
-          expect(messages[0].html).toBe(message)
+          expect(messages[0].html).not.toBeDefined()
+          expect(messages[0].text).toBe(message)
           expect(messages[0].filePath).toBe(bitwisePath)
           expect(messages[0].range).toEqual([[0, 10], [0, 13]])
         })
@@ -87,13 +86,12 @@ describe('The JSHint provider for Linter', () => {
     })
 
     it('verifies the first message', () => {
-      const message = '<a href="https://jslinterrors.com/E006">E006</a>' +
-        ' - Unexpected early end of program.'
+      const message = 'E006 - Unexpected early end of program.'
       waitsForPromise(() =>
         lint(editor).then((messages) => {
           expect(messages[0].type).toBe('Error')
-          expect(messages[0].text).not.toBeDefined()
-          expect(messages[0].html).toBe(message)
+          expect(messages[0].html).not.toBeDefined()
+          expect(messages[0].text).toBe(message)
           expect(messages[0].filePath).toBe(syntaxPath)
           expect(messages[0].range).toEqual([[0, 10], [0, 11]])
         })
