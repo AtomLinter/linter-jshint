@@ -35,7 +35,7 @@ describe('The JSHint provider for Linter', () => {
     let editor = null
     beforeEach(() => {
       waitsForPromise(() =>
-        atom.workspace.open(bitwisePath).then(openEditor => {
+        atom.workspace.open(bitwisePath).then((openEditor) => {
           editor = openEditor
         })
       )
@@ -45,7 +45,7 @@ describe('The JSHint provider for Linter', () => {
       const message = '<a href="https://jslinterrors.com/W016">W016</a>' +
         " - Unexpected use of '&'."
       waitsForPromise(() =>
-        lint(editor).then(messages => {
+        lint(editor).then((messages) => {
           expect(messages[0].type).toBe('Warning')
           expect(messages[0].text).not.toBeDefined()
           expect(messages[0].html).toBe(message)
@@ -58,8 +58,8 @@ describe('The JSHint provider for Linter', () => {
 
   it('finds nothing wrong with an empty file', () => {
     waitsForPromise(() =>
-      atom.workspace.open(emptyPath).then(editor =>
-        lint(editor).then(messages => {
+      atom.workspace.open(emptyPath).then((editor) =>
+        lint(editor).then((messages) => {
           expect(messages.length).toBe(0)
         })
       )
@@ -68,8 +68,8 @@ describe('The JSHint provider for Linter', () => {
 
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() =>
-      atom.workspace.open(goodPath).then(editor =>
-        lint(editor).then(messages => {
+      atom.workspace.open(goodPath).then((editor) =>
+        lint(editor).then((messages) => {
           expect(messages.length).toBe(0)
         })
       )
@@ -80,7 +80,7 @@ describe('The JSHint provider for Linter', () => {
     let editor = null
     beforeEach(() => {
       waitsForPromise(() =>
-        atom.workspace.open(syntaxPath).then(openEditor => {
+        atom.workspace.open(syntaxPath).then((openEditor) => {
           editor = openEditor
         })
       )
@@ -90,7 +90,7 @@ describe('The JSHint provider for Linter', () => {
       const message = '<a href="https://jslinterrors.com/E006">E006</a>' +
         ' - Unexpected early end of program.'
       waitsForPromise(() =>
-        lint(editor).then(messages => {
+        lint(editor).then((messages) => {
           expect(messages[0].type).toBe('Error')
           expect(messages[0].text).not.toBeDefined()
           expect(messages[0].html).toBe(message)
