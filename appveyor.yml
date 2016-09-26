@@ -1,14 +1,8 @@
 ### Project specific config ###
 environment:
-  ATOM_LINT_WITH_BUNDLED_NODE: "false"
-
   matrix:
   - ATOM_CHANNEL: stable
   - ATOM_CHANNEL: beta
-
-install:
-  # Install Node.js to run any configured linters
-  - ps: Install-Product node 6
 
 ### Generic setup follows ###
 build_script:
