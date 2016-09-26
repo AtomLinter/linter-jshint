@@ -1,31 +1,22 @@
 ### Project specific config ###
-
-# Installed for linting the project
-language: node_js
+language: generic
 
 matrix:
   include:
     - os: linux
-      node_js: "6"
       env: ATOM_CHANNEL=stable
 
     - os: linux
-      node_js: "6"
       env: ATOM_CHANNEL=beta
 
     - os: osx
-      node_js: "6"
       env: ATOM_CHANNEL=stable
 
-env:
-  global:
-    - ATOM_LINT_WITH_BUNDLED_NODE="false"
-
 ### Generic setup follows ###
-script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
-
-# Needed to disable the auto-install step running `npm install`
-install: true
+script:
+  - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
+  - chmod u+x build-package.sh
+  - ./build-package.sh
 
 notifications:
   email:
