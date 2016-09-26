@@ -1,6 +1,46 @@
 # Change Log
 
-## [v2.1.0](https://github.com/AtomLinter/linter-jshint/tree/v2.1.0) (2016-04-08)
+## [v3.0.0](https://github.com/AtomLinter/linter-jshint/tree/v3.0.0) (2016-09-26)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.1.0...v3.0.0)
+
+**Implemented enhancements:**
+
+- "Lint JSX Files" doesn't seem to work [\#331](https://github.com/AtomLinter/linter-jshint/issues/331)
+- Implement specs [\#193](https://github.com/AtomLinter/linter-jshint/issues/193)
+- Update CI configuration [\#342](https://github.com/AtomLinter/linter-jshint/pull/342) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update eslint-config-airbnb-base to version 8.0.0 🚀 [\#340](https://github.com/AtomLinter/linter-jshint/pull/340) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update to eslint-config-airbnb-base v7.1.0 [\#334](https://github.com/AtomLinter/linter-jshint/pull/334) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update eslint-config-airbnb-base to version 7.0.0 🚀 [\#330](https://github.com/AtomLinter/linter-jshint/pull/330) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update eslint-config-airbnb-base to version 6.0.0 🚀 [\#329](https://github.com/AtomLinter/linter-jshint/pull/329) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-linter to version 8.0.0 🚀 [\#326](https://github.com/AtomLinter/linter-jshint/pull/326) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update eslint to version 3.2.2 🚀 [\#315](https://github.com/AtomLinter/linter-jshint/pull/315) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update CI configuration [\#306](https://github.com/AtomLinter/linter-jshint/pull/306) ([Arcanemagus](https://github.com/Arcanemagus))
+- Add HTTPS to jslinterrors.com links [\#297](https://github.com/AtomLinter/linter-jshint/pull/297) ([rugk](https://github.com/rugk))
+- Update eslint-config-airbnb-base to version 3.0.1 🚀 [\#281](https://github.com/AtomLinter/linter-jshint/pull/281) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update atom-linter to version 5.0.1 🚀 [\#280](https://github.com/AtomLinter/linter-jshint/pull/280) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update eslint-config-airbnb-base to version 2.0.0 🚀 [\#275](https://github.com/AtomLinter/linter-jshint/pull/275) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Add CI configurations [\#272](https://github.com/AtomLinter/linter-jshint/pull/272) ([Arcanemagus](https://github.com/Arcanemagus))
+- Add specs [\#271](https://github.com/AtomLinter/linter-jshint/pull/271) ([Arcanemagus](https://github.com/Arcanemagus))
+- Move to eslint-config-airbnb-base [\#270](https://github.com/AtomLinter/linter-jshint/pull/270) ([Arcanemagus](https://github.com/Arcanemagus))
+- babel-eslint@6.0.3 untested ⚠️ [\#269](https://github.com/AtomLinter/linter-jshint/pull/269) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- jshint@2.9.2 untested ⚠️ [\#266](https://github.com/AtomLinter/linter-jshint/pull/266) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- eslint@2.8.0 untested ⚠️ [\#263](https://github.com/AtomLinter/linter-jshint/pull/263) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- atom-linter@4.7.0 untested ⚠️ [\#261](https://github.com/AtomLinter/linter-jshint/pull/261) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+- Update eslint-config-airbnb to version 7.0.0 🚀 [\#256](https://github.com/AtomLinter/linter-jshint/pull/256) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Fixed bugs:**
+
+- Broken Links [\#316](https://github.com/AtomLinter/linter-jshint/issues/316)
+- Website http://jslinterrors.com/ down [\#296](https://github.com/AtomLinter/linter-jshint/issues/296)
+- Jshint not disabling when no .jshintrc found [\#291](https://github.com/AtomLinter/linter-jshint/issues/291)
+- Unexpected end of input [\#238](https://github.com/AtomLinter/linter-jshint/issues/238)
+- Fix a race condition [\#343](https://github.com/AtomLinter/linter-jshint/pull/343) ([Arcanemagus](https://github.com/Arcanemagus))
+- Remove helper URLs [\#337](https://github.com/AtomLinter/linter-jshint/pull/337) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update eslint to v3.5.0 [\#336](https://github.com/AtomLinter/linter-jshint/pull/336) ([Arcanemagus](https://github.com/Arcanemagus))
+- Remove JSX Support [\#335](https://github.com/AtomLinter/linter-jshint/pull/335) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update the CI configuration [\#327](https://github.com/AtomLinter/linter-jshint/pull/327) ([Arcanemagus](https://github.com/Arcanemagus))
+
+## [v2.1.0](https://github.com/AtomLinter/linter-jshint/tree/v2.1.0) (2016-04-09)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.0.4...v2.1.0)
 
 **Implemented enhancements:**
