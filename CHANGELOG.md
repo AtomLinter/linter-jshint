@@ -1,5 +1,17 @@
 # Change Log
 
+## [v3.0.1](https://github.com/AtomLinter/linter-jshint/tree/v3.0.1) (2016-10-14)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.0...v3.0.1)
+
+**Implemented enhancements:**
+
+- Update babel-eslint to version 7.0.0 🚀 [\#345](https://github.com/AtomLinter/linter-jshint/pull/345) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
+**Fixed bugs:**
+
+- Update jshint dependency to 2.9.3 [\#353](https://github.com/AtomLinter/linter-jshint/issues/353)
+- Update and pin JSHint version [\#354](https://github.com/AtomLinter/linter-jshint/pull/354) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v3.0.0](https://github.com/AtomLinter/linter-jshint/tree/v3.0.0) (2016-09-26)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v2.1.0...v3.0.0)
 
