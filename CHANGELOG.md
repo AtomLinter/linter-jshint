@@ -1,5 +1,13 @@
 # Change Log
 
+## [v3.0.2](https://github.com/AtomLinter/linter-jshint/tree/v3.0.2) (2016-12-13)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.1...v3.0.2)
+
+**Implemented enhancements:**
+
+- Update to eslint-config-airbnb-base v11.0.0 [\#362](https://github.com/AtomLinter/linter-jshint/pull/362) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update jshint to version 2.9.4 🚀 [\#357](https://github.com/AtomLinter/linter-jshint/pull/357) ([greenkeeperio-bot](https://github.com/greenkeeperio-bot))
+
 ## [v3.0.1](https://github.com/AtomLinter/linter-jshint/tree/v3.0.1) (2016-10-14)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.0...v3.0.1)
 
