@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "apm test",
-    "lint": "eslint lib spec"
+    "lint": "eslint ."
   },
   "package-deps": [
     "linter"
@@ -19,26 +19,13 @@
     "jshint-json": "^1.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.0.0",
-    "eslint": "^3.6.0",
-    "eslint-config-airbnb-base": "^8.0.0",
-    "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-import": "^1.16.0"
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0"
   },
   "eslintConfig": {
     "rules": {
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "no-console": "off",
-      "no-continue": "off",
-      "semi": [
-        "error",
-        "never"
-      ],
       "global-require": "off",
-      "no-nested-ternary": "off",
       "import/no-unresolved": [
         "error",
         {
@@ -46,21 +33,13 @@
             "atom"
           ]
         }
-      ],
-      "import/no-extraneous-dependencies": "off",
-      "arrow-parens": "off",
-      "babel/arrow-parens": "error"
+      ]
     },
-    "plugins": [
-      "babel"
-    ],
     "extends": "airbnb-base",
-    "parser": "babel-eslint",
     "globals": {
       "atom": true
     },
     "env": {
-      "es6": true,
       "node": true
     }
   },
