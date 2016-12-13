@@ -27,14 +27,6 @@
   },
   "eslintConfig": {
     "rules": {
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "semi": [
-        "error",
-        "never"
-      ],
       "global-require": "off",
       "import/no-unresolved": [
         "error",
