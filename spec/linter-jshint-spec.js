@@ -57,7 +57,7 @@ describe('The JSHint provider for Linter', () => {
 
   it('finds nothing wrong with an empty file', () => {
     waitsForPromise(() =>
-      atom.workspace.open(emptyPath).then((editor) =>
+      atom.workspace.open(emptyPath).then(editor =>
         lint(editor).then((messages) => {
           expect(messages.length).toBe(0)
         })
@@ -67,7 +67,7 @@ describe('The JSHint provider for Linter', () => {
 
   it('finds nothing wrong with a valid file', () => {
     waitsForPromise(() =>
-      atom.workspace.open(goodPath).then((editor) =>
+      atom.workspace.open(goodPath).then(editor =>
         lint(editor).then((messages) => {
           expect(messages.length).toBe(0)
         })

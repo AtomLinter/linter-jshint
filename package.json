@@ -31,14 +31,11 @@
         "error",
         "never"
       ],
-      "no-console": "off",
-      "no-continue": "off",
       "semi": [
         "error",
         "never"
       ],
       "global-require": "off",
-      "no-nested-ternary": "off",
       "import/no-unresolved": [
         "error",
         {
@@ -46,10 +43,7 @@
             "atom"
           ]
         }
-      ],
-      "import/no-extraneous-dependencies": "off",
-      "arrow-parens": "off",
-      "babel/arrow-parens": "error"
+      ]
     },
     "plugins": [
       "babel"
