@@ -19,10 +19,8 @@
     "jshint-json": "^1.0.0"
   },
   "devDependencies": {
-    "babel-eslint": "^7.0.0",
     "eslint": "^3.12.0",
     "eslint-config-airbnb-base": "^11.0.0",
-    "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-import": "^2.2.0"
   },
   "eslintConfig": {
@@ -37,11 +35,7 @@
         }
       ]
     },
-    "plugins": [
-      "babel"
-    ],
     "extends": "airbnb-base",
-    "parser": "babel-eslint",
     "globals": {
       "atom": true
     },
