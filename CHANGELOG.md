@@ -1,5 +1,13 @@
 # Change Log
 
+## [v3.0.3](https://github.com/AtomLinter/linter-jshint/tree/v3.0.3) (2017-03-02)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.2...v3.0.3)
+
+**Implemented enhancements:**
+
+- Remove macOS testing [\#370](https://github.com/AtomLinter/linter-jshint/pull/370) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update atom-linter to the latest version 🚀 [\#368](https://github.com/AtomLinter/linter-jshint/pull/368) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
 ## [v3.0.2](https://github.com/AtomLinter/linter-jshint/tree/v3.0.2) (2016-12-13)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.1...v3.0.2)
 
