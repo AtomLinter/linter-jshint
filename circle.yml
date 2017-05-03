@@ -1,10 +1,13 @@
-test:
+dependencies:
   override:
     - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
     - chmod u+x build-package.sh
-    - ./build-package.sh
 
-dependencies:
+test:
   override:
-    # If nothing is put here, CircleCI will run `npm install` using the system Node.js
-    - echo "Managed in the script"
+    - ./build-package.sh
+    - npm run lint
+
+machine:
+  node:
+    version: 6.3.0
