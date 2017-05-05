@@ -22,7 +22,7 @@ declare module 'atom-linter' {
   declare var findCachedAsync:
     (directory: string, names: string | Array<string>) => Promise<?string>;
   declare var execNode:
-    (filePath: string, args: Array<string>, options: ExecOptions) => Promise<string>;
+    (filePath: string, args: Array<string>, options?: ExecOptions) => Promise<string>;
   declare var generateRange:
     (textEditor: TextEditor, lineNumber?: number, colStart?: number) =>
       Array<Array<number>>
