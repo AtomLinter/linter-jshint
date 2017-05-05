@@ -5,7 +5,27 @@ import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
 import * as path from 'path';
 import linter from '../lib/main';
 
+const goodPath = path.join(__dirname, 'fixtures', 'good.js');
 const bitwisePath = path.join(__dirname, 'fixtures', 'bitwise', 'bitwise.js');
+
+async function getNotification(expectedMessage) {
+  return new Promise((resolve) => {
+    let notificationSub;
+    const newNotification = (notification) => {
+      if (notification.getMessage() !== expectedMessage) {
+        // As the specs execute asynchronously, it's possible a notification
+        // from a different spec was grabbed, if the message doesn't match what
+        // is expected simply return and keep waiting for the next message.
+        return;
+      }
+      // Dispose of the notificaiton subscription
+      notificationSub.dispose();
+      resolve(notification);
+    };
+    // Subscribe to Atom's notifications
+    notificationSub = atom.notifications.onDidAddNotification(newNotification);
+  });
+}
 
 describe('The JSHint provider for Linter', () => {
   const lint = linter.provideLinter().lint;
@@ -50,7 +70,6 @@ describe('The JSHint provider for Linter', () => {
   });
 
   it('finds nothing wrong with a valid file', async () => {
-    const goodPath = path.join(__dirname, 'fixtures', 'good.js');
     const editor = await atom.workspace.open(goodPath);
     const messages = await lint(editor);
     expect(messages.length).toBe(0);
@@ -95,6 +114,33 @@ describe('The JSHint provider for Linter', () => {
       expect(checkMessages[0].range).toEqual([[0, 4], [0, 7]]);
 
       expect(ignoreMessages.length).toBe(0);
+    });
+  });
+
+  describe('prints debugging information with the `debug` command', () => {
+    let editor;
+    const expectedMessage = 'linter-jshint:: Debugging information';
+    beforeEach(async () => {
+      editor = await atom.workspace.open(goodPath);
+    });
+
+    it('shows an info notification', async () => {
+      atom.commands.dispatch(atom.views.getView(editor), 'linter-jshint:debug');
+      const notification = await getNotification(expectedMessage);
+
+      expect(notification.getMessage()).toBe(expectedMessage);
+      expect(notification.getType()).toEqual('info');
+    });
+
+    it('includes debugging information in the details', async () => {
+      atom.commands.dispatch(atom.views.getView(editor), 'linter-jshint:debug');
+      const notification = await getNotification(expectedMessage);
+      const detail = notification.getDetail();
+
+      expect(detail.includes(`Atom version: ${atom.getVersion()}`)).toBe(true);
+      expect(detail.includes('linter-jshint version:')).toBe(true);
+      expect(detail.includes(`Platform: ${process.platform}`)).toBe(true);
+      expect(detail.includes('linter-jshint configuration:')).toBe(true);
     });
   });
 });
