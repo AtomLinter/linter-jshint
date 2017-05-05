@@ -1,19 +1,22 @@
 ### Project specific config ###
-language: generic
+language: node_js
 
 matrix:
   include:
     - os: linux
       env: ATOM_CHANNEL=stable
+      node_js: "node"
 
     - os: linux
       env: ATOM_CHANNEL=beta
+      node_js: "node"
 
 ### Generic setup follows ###
 script:
   - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
   - chmod u+x build-package.sh
   - ./build-package.sh
+  - npm run lint
 
 notifications:
   email:
