@@ -54,11 +54,10 @@ describe('The JSHint provider for Linter', () => {
       const expected = "W016 - Unexpected use of '&'.";
 
       const messages = await lint(editor);
-      expect(messages[0].type).toBe('Warning');
-      expect(messages[0].html).not.toBeDefined();
-      expect(messages[0].text).toBe(expected);
-      expect(messages[0].filePath).toBe(bitwisePath);
-      expect(messages[0].range).toEqual([[0, 10], [0, 13]]);
+      expect(messages[0].severity).toBe('warning');
+      expect(messages[0].excerpt).toBe(expected);
+      expect(messages[0].location.file).toBe(bitwisePath);
+      expect(messages[0].location.position).toEqual([[0, 10], [0, 13]]);
     });
   });
 
@@ -86,11 +85,10 @@ describe('The JSHint provider for Linter', () => {
     it('verifies the first message', async () => {
       const message = 'E006 - Unexpected early end of program.';
       const messages = await lint(editor);
-      expect(messages[0].type).toBe('Error');
-      expect(messages[0].html).not.toBeDefined();
-      expect(messages[0].text).toBe(message);
-      expect(messages[0].filePath).toBe(syntaxPath);
-      expect(messages[0].range).toEqual([[0, 10], [0, 11]]);
+      expect(messages[0].severity).toBe('error');
+      expect(messages[0].excerpt).toBe(message);
+      expect(messages[0].location.file).toBe(syntaxPath);
+      expect(messages[0].location.position).toEqual([[0, 10], [0, 11]]);
     });
   });
 
@@ -107,11 +105,10 @@ describe('The JSHint provider for Linter', () => {
       const expected = "W098 - 'foo' is defined but never used.";
 
       expect(checkMessages.length).toBe(1);
-      expect(checkMessages[0].type).toBe('Warning');
-      expect(checkMessages[0].html).not.toBeDefined();
-      expect(checkMessages[0].text).toBe(expected);
-      expect(checkMessages[0].filePath).toBe(checkedPath);
-      expect(checkMessages[0].range).toEqual([[0, 4], [0, 7]]);
+      expect(checkMessages[0].severity).toBe('warning');
+      expect(checkMessages[0].excerpt).toBe(expected);
+      expect(checkMessages[0].location.file).toBe(checkedPath);
+      expect(checkMessages[0].location.position).toEqual([[0, 4], [0, 7]]);
 
       expect(ignoreMessages.length).toBe(0);
     });
