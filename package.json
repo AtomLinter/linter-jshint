@@ -5,6 +5,41 @@
   "description": "Linter plugin for JavaScript, using jshint",
   "repository": "https://github.com/AtomLinter/linter-jshint.git",
   "license": "MIT",
+  "configSchema": {
+    "executablePath": {
+      "type": "string",
+      "default": "",
+      "description": "Path of the `jshint` node script"
+    },
+    "lintInlineJavaScript": {
+      "type": "boolean",
+      "default": false,
+      "description": "Attempts to lint JavaScript inside `<script>` blocks in HTML or PHP files."
+    },
+    "disableWhenNoJshintrcFileInPath": {
+      "type": "boolean",
+      "default": false,
+      "description": "Disable the provider when no configuration file is found."
+    },
+    "scopes": {
+      "type": "array",
+      "default": [
+        "source.js",
+        "source.js-semantic"
+      ],
+      "description": "List of scopes to run JSHint on, run `Editor: Log Cursor Scope` to determine the scopes for a file."
+    },
+    "jshintFileName": {
+      "type": "string",
+      "default": ".jshintrc",
+      "description": "Custom name for the .jshintrc file"
+    },
+    "jshintignoreFilename": {
+      "type": "string",
+      "default": ".jshintignore",
+      "description": "Custom name for the .jshintignore file"
+    }
+  },
   "scripts": {
     "test": "apm test",
     "lint": "eslint lib spec decls && flow check"
