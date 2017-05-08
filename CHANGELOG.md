@@ -1,5 +1,28 @@
 # Change Log
 
+## [v3.1.0](https://github.com/AtomLinter/linter-jshint/tree/v3.1.0) (2017-05-08)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.3...v3.1.0)
+
+**Implemented enhancements:**
+
+- Option to force lint by file extension or scope [\#372](https://github.com/AtomLinter/linter-jshint/issues/372)
+- Can't configure to use .jshintignore file [\#302](https://github.com/AtomLinter/linter-jshint/issues/302)
+- Improve startup time [\#388](https://github.com/AtomLinter/linter-jshint/pull/388) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update to the Linter v2 API [\#387](https://github.com/AtomLinter/linter-jshint/pull/387) ([Arcanemagus](https://github.com/Arcanemagus))
+- Remove workarounds and handle errors better [\#386](https://github.com/AtomLinter/linter-jshint/pull/386) ([Arcanemagus](https://github.com/Arcanemagus))
+- Set CWD and fix ignore handling [\#385](https://github.com/AtomLinter/linter-jshint/pull/385) ([Arcanemagus](https://github.com/Arcanemagus))
+- Async-ify the specs [\#384](https://github.com/AtomLinter/linter-jshint/pull/384) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update atom-linter to the latest version 🚀 [\#378](https://github.com/AtomLinter/linter-jshint/pull/378) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Added option to configure scopes to lint [\#374](https://github.com/AtomLinter/linter-jshint/pull/374) ([augusto-moura](https://github.com/augusto-moura))
+
+**Fixed bugs:**
+
+- Default .jshintrc [\#339](https://github.com/AtomLinter/linter-jshint/issues/339)
+- Linter silently fails with config issue [\#212](https://github.com/AtomLinter/linter-jshint/issues/212)
+- Remove check on ID [\#390](https://github.com/AtomLinter/linter-jshint/pull/390) ([Arcanemagus](https://github.com/Arcanemagus))
+- Allow JSHint to handle configuration where possible [\#389](https://github.com/AtomLinter/linter-jshint/pull/389) ([Arcanemagus](https://github.com/Arcanemagus))
+- Fix Flow usage [\#382](https://github.com/AtomLinter/linter-jshint/pull/382) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v3.0.3](https://github.com/AtomLinter/linter-jshint/tree/v3.0.3) (2017-03-02)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.2...v3.0.3)
 
