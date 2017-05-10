@@ -1,5 +1,17 @@
 # Change Log
 
+## [v3.1.2](https://github.com/AtomLinter/linter-jshint/tree/v3.1.2) (2017-05-10)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.1...v3.1.2)
+
+**Implemented enhancements:**
+
+- Update flow-bin to version v0.46.0 🚀 [\#397](https://github.com/AtomLinter/linter-jshint/pull/397) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+
+**Fixed bugs:**
+
+- "Disable when no jshintrc..." option still broken [\#396](https://github.com/AtomLinter/linter-jshint/issues/396)
+- Fix logic when there is a config file [\#398](https://github.com/AtomLinter/linter-jshint/pull/398) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v3.1.1](https://github.com/AtomLinter/linter-jshint/tree/v3.1.1) (2017-05-08)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.0...v3.1.1)
 
