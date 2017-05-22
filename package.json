@@ -84,6 +84,9 @@
       "browser": true
     }
   },
+  "engines": {
+    "atom": ">=1.7.0 <2.0.0"
+  },
   "providedServices": {
     "linter": {
       "versions": {
