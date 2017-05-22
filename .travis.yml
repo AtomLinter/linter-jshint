@@ -32,6 +32,8 @@ git:
 
 sudo: false
 
+dist: trusty
+
 addons:
   apt:
     packages:
