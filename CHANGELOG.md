@@ -1,11 +1,28 @@
 # Change Log
 
+## [v3.1.3](https://github.com/AtomLinter/linter-jshint/tree/v3.1.3) (2017-06-23)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.2...v3.1.3)
+
+**Implemented enhancements:**
+
+- Update jshint to version 2.9.5 🚀 [\#415](https://github.com/AtomLinter/linter-jshint/pull/415) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+- chore\(package\): update flow-bin to version 0.48.0 [\#413](https://github.com/AtomLinter/linter-jshint/pull/413) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Fixed bugs:**
+
+- Not all JSHint warnings showing when indentation is set to tabs [\#416](https://github.com/AtomLinter/linter-jshint/issues/416)
+- Specify compatible Atom versions [\#402](https://github.com/AtomLinter/linter-jshint/issues/402)
+- Fix generation of invalid trace messages [\#417](https://github.com/AtomLinter/linter-jshint/pull/417) ([Arcanemagus](https://github.com/Arcanemagus))
+- Fix Atom Beta Travis CI builds [\#414](https://github.com/AtomLinter/linter-jshint/pull/414) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update Travis-CI image to Trusty [\#405](https://github.com/AtomLinter/linter-jshint/pull/405) ([Arcanemagus](https://github.com/Arcanemagus))
+- Specify a minimum Atom version [\#404](https://github.com/AtomLinter/linter-jshint/pull/404) ([Arcanemagus](https://github.com/Arcanemagus))
+
 ## [v3.1.2](https://github.com/AtomLinter/linter-jshint/tree/v3.1.2) (2017-05-10)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.1...v3.1.2)
 
 **Implemented enhancements:**
 
-- Update flow-bin to version v0.46.0 🚀 [\#397](https://github.com/AtomLinter/linter-jshint/pull/397) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update flow-bin to version v0.46.0 🚀 [\#397](https://github.com/AtomLinter/linter-jshint/pull/397) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 **Fixed bugs:**
 
@@ -32,7 +49,7 @@
 - Remove workarounds and handle errors better [\#386](https://github.com/AtomLinter/linter-jshint/pull/386) ([Arcanemagus](https://github.com/Arcanemagus))
 - Set CWD and fix ignore handling [\#385](https://github.com/AtomLinter/linter-jshint/pull/385) ([Arcanemagus](https://github.com/Arcanemagus))
 - Async-ify the specs [\#384](https://github.com/AtomLinter/linter-jshint/pull/384) ([Arcanemagus](https://github.com/Arcanemagus))
-- Update atom-linter to v10.0.0 🚀 [\#378](https://github.com/AtomLinter/linter-jshint/pull/378) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update atom-linter to v10.0.0 🚀 [\#378](https://github.com/AtomLinter/linter-jshint/pull/378) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 - Added option to configure scopes to lint [\#374](https://github.com/AtomLinter/linter-jshint/pull/374) ([augusto-moura](https://github.com/augusto-moura))
 
 **Fixed bugs:**
@@ -49,7 +66,7 @@
 **Implemented enhancements:**
 
 - Remove macOS testing [\#370](https://github.com/AtomLinter/linter-jshint/pull/370) ([Arcanemagus](https://github.com/Arcanemagus))
-- Update atom-linter to v9.0.0 🚀 [\#368](https://github.com/AtomLinter/linter-jshint/pull/368) ([greenkeeper[bot]](https://github.com/integration/greenkeeper))
+- Update atom-linter to v9.0.0 🚀 [\#368](https://github.com/AtomLinter/linter-jshint/pull/368) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
 
 ## [v3.0.2](https://github.com/AtomLinter/linter-jshint/tree/v3.0.2) (2016-12-13)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.0.1...v3.0.2)
