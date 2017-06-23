@@ -1,5 +1,16 @@
 # Change Log
 
+## [v3.1.4](https://github.com/AtomLinter/linter-jshint/tree/v3.1.4) (2017-06-23)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.3...v3.1.4)
+
+**Implemented enhancements:**
+
+- Cache debug information where possible [\#418](https://github.com/AtomLinter/linter-jshint/pull/418) ([Arcanemagus](https://github.com/Arcanemagus))
+
+**Fixed bugs:**
+
+- Atom Helper using 100% of CPU on Mac OS when escaping new lines '\' for a big string [\#410](https://github.com/AtomLinter/linter-jshint/issues/410)
+
 ## [v3.1.3](https://github.com/AtomLinter/linter-jshint/tree/v3.1.3) (2017-06-23)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.2...v3.1.3)
 
