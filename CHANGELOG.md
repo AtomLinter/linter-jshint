@@ -1,5 +1,14 @@
 # Change Log
 
+## [v3.1.5](https://github.com/AtomLinter/linter-jshint/tree/v3.1.5) (2017-06-29)
+[Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.4...v3.1.5)
+
+**Implemented enhancements:**
+
+- Check for existing issues [\#441](https://github.com/AtomLinter/linter-jshint/pull/441) ([Arcanemagus](https://github.com/Arcanemagus))
+- Remove some Travis CI dependencies [\#438](https://github.com/AtomLinter/linter-jshint/pull/438) ([Arcanemagus](https://github.com/Arcanemagus))
+- Update flow-bin to the latest version 🚀 [\#437](https://github.com/AtomLinter/linter-jshint/pull/437) ([greenkeeper[bot]](https://github.com/apps/greenkeeper))
+
 ## [v3.1.4](https://github.com/AtomLinter/linter-jshint/tree/v3.1.4) (2017-06-23)
 [Full Changelog](https://github.com/AtomLinter/linter-jshint/compare/v3.1.3...v3.1.4)
 
