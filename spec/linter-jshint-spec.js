@@ -28,7 +28,7 @@ async function getNotification(expectedMessage) {
 }
 
 describe('The JSHint provider for Linter', () => {
-  const lint = linter.provideLinter().lint;
+  const { lint } = linter.provideLinter();
 
   beforeEach(async () => {
     await atom.packages.activatePackage('linter-jshint');
@@ -36,12 +36,10 @@ describe('The JSHint provider for Linter', () => {
   });
 
   it('should be in the packages list', () =>
-    expect(atom.packages.isPackageLoaded('linter-jshint')).toBe(true),
-  );
+    expect(atom.packages.isPackageLoaded('linter-jshint')).toBe(true));
 
   it('should be an active package', () =>
-    expect(atom.packages.isPackageActive('linter-jshint')).toBe(true),
-  );
+    expect(atom.packages.isPackageActive('linter-jshint')).toBe(true));
 
   describe('shows errors in a file with issues', () => {
     let editor = null;
