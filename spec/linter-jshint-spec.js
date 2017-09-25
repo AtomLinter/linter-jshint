@@ -91,22 +91,41 @@ describe('The JSHint provider for Linter', () => {
   });
 
   describe('handles .jshintignore files', () => {
-    const ignoreDir = path.join(__dirname, 'fixtures', 'ignore');
-    const checkedPath = path.join(ignoreDir, 'checked.js');
-    const ignoredPath = path.join(ignoreDir, 'ignored.js');
+    const checkMessage = (message, filePath) => {
+      const expected = "W098 - 'foo' is defined but never used.";
+
+      expect(message.severity).toBe('warning');
+      expect(message.excerpt).toBe(expected);
+      expect(message.location.file).toBe(filePath);
+      expect(message.location.position).toEqual([[0, 4], [0, 7]]);
+    };
 
     it('works when in the same directory', async () => {
+      const ignoreDir = path.join(__dirname, 'fixtures', 'ignore');
+      const checkedPath = path.join(ignoreDir, 'checked.js');
+      const ignoredPath = path.join(ignoreDir, 'ignored.js');
       const checkEditor = await atom.workspace.open(checkedPath);
       const ignoreEditor = await atom.workspace.open(ignoredPath);
       const checkMessages = await lint(checkEditor);
       const ignoreMessages = await lint(ignoreEditor);
-      const expected = "W098 - 'foo' is defined but never used.";
 
       expect(checkMessages.length).toBe(1);
-      expect(checkMessages[0].severity).toBe('warning');
-      expect(checkMessages[0].excerpt).toBe(expected);
-      expect(checkMessages[0].location.file).toBe(checkedPath);
-      expect(checkMessages[0].location.position).toEqual([[0, 4], [0, 7]]);
+      checkMessage(checkMessages[0], checkedPath);
+
+      expect(ignoreMessages.length).toBe(0);
+    });
+
+    it('handles relative paths in .jshintignore', async () => {
+      const ignoreDir = path.join(__dirname, 'fixtures', 'ignore-relative', 'js');
+      const checkedPath = path.join(ignoreDir, 'checked.js');
+      const ignoredPath = path.join(ignoreDir, 'ignored.js');
+      const checkEditor = await atom.workspace.open(checkedPath);
+      const ignoreEditor = await atom.workspace.open(ignoredPath);
+      const checkMessages = await lint(checkEditor);
+      const ignoreMessages = await lint(ignoreEditor);
+
+      expect(checkMessages.length).toBe(1);
+      checkMessage(checkMessages[0], checkedPath);
 
       expect(ignoreMessages.length).toBe(0);
     });
