@@ -52,7 +52,8 @@
     "atom-package-deps": "^4.6.0",
     "jshint": "2.9.5",
     "jshint-json": "^1.0.0",
-    "minimatch": "^3.0.3"
+    "minimatch": "^3.0.3",
+    "shelljs": "^0.7.8"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.0",
