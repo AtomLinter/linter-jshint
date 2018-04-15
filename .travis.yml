@@ -41,3 +41,15 @@ addons:
     - fakeroot
     - git
     - libsecret-1-dev
+
+node_js: lts/*
+
+after_success:
+  # Add apm to the PATH
+  - export PATH=${PATH}:${HOME}/atom/usr/bin/
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npx semantic-release
