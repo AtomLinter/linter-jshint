@@ -1,3 +1,11 @@
+<a name="3.1.7"></a>
+## [3.1.7](https://github.com/AtomLinter/linter-jshint/compare/v3.1.6...v3.1.7) (2018-05-06)
+
+
+### Bug Fixes
+
+* **package:** update shelljs to version 0.8.0 ([#556](https://github.com/AtomLinter/linter-jshint/issues/556)) ([6382677](https://github.com/AtomLinter/linter-jshint/commit/6382677))
+
 # Change Log
 
 ## [v3.1.6](https://github.com/AtomLinter/linter-jshint/tree/v3.1.6) (2017-09-25)
