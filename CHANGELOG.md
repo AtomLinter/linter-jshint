@@ -1,3 +1,11 @@
+<a name="3.1.8"></a>
+## [3.1.8](https://github.com/AtomLinter/linter-jshint/compare/v3.1.7...v3.1.8) (2018-05-06)
+
+
+### Bug Fixes
+
+* **package:** update jshint-json to version 2.0.0 ([a11590e](https://github.com/AtomLinter/linter-jshint/commit/a11590e))
+
 <a name="3.1.7"></a>
 ## [3.1.7](https://github.com/AtomLinter/linter-jshint/compare/v3.1.6...v3.1.7) (2018-05-06)
 
