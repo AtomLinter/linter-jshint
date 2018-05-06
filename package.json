@@ -3,7 +3,10 @@
   "main": "./lib/main.js",
   "version": "3.1.6",
   "description": "Linter plugin for JavaScript, using jshint",
-  "repository": "https://github.com/AtomLinter/linter-jshint.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtomLinter/linter-jshint.git"
+  },
   "license": "MIT",
   "configSchema": {
     "executablePath": {
@@ -41,6 +44,7 @@
     }
   },
   "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "test": "apm test",
     "lint": "eslint lib spec decls && flow check"
   },
@@ -56,6 +60,12 @@
     "shelljs": "^0.8.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^6.1.3",
+    "@commitlint/config-conventional": "^6.1.3",
+    "@commitlint/travis-cli": "^6.1.3",
+    "@semantic-release/apm-config": "^2.0.1",
+    "husky": "^0.14.3",
+    "semantic-release": "^15.1.7",
     "babel-eslint": "^8.0.0",
     "eslint": "^4.6.0",
     "eslint-config-airbnb-base": "^12.0.0",
@@ -94,5 +104,13 @@
         "2.0.0": "provideLinter"
       }
     }
+  },
+  "release": {
+    "extends": "@semantic-release/apm-config"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
