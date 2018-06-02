@@ -62,7 +62,7 @@
   "devDependencies": {
     "@commitlint/cli": "^6.1.3",
     "@commitlint/config-conventional": "^6.1.3",
-    "@commitlint/travis-cli": "^6.1.3",
+    "@commitlint/travis-cli": "^7.0.0",
     "@semantic-release/apm-config": "^2.0.1",
     "husky": "^0.14.3",
     "semantic-release": "^15.1.7",
