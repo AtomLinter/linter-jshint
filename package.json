@@ -44,7 +44,6 @@
     }
   },
   "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS",
     "test": "apm test",
     "lint": "eslint lib spec decls && flow check"
   },
@@ -125,5 +124,10 @@
         "groupName": "ESLint packages"
       }
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
