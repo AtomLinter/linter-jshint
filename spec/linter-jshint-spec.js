@@ -1,7 +1,9 @@
 'use babel';
 
-// eslint-disable-next-line no-unused-vars
-import { it, fit, wait, beforeEach, afterEach } from 'jasmine-fix';
+import {
+  // eslint-disable-next-line no-unused-vars
+  it, fit, wait, beforeEach, afterEach,
+} from 'jasmine-fix';
 import * as path from 'path';
 import linter from '../lib/main';
 
@@ -35,11 +37,13 @@ describe('The JSHint provider for Linter', () => {
     await atom.packages.activatePackage('language-javascript');
   });
 
-  it('should be in the packages list', () =>
-    expect(atom.packages.isPackageLoaded('linter-jshint')).toBe(true));
+  it('should be in the packages list', () => {
+    expect(atom.packages.isPackageLoaded('linter-jshint')).toBe(true);
+  });
 
-  it('should be an active package', () =>
-    expect(atom.packages.isPackageActive('linter-jshint')).toBe(true));
+  it('should be an active package', () => {
+    expect(atom.packages.isPackageActive('linter-jshint')).toBe(true);
+  });
 
   describe('shows errors in a file with issues', () => {
     let editor = null;
