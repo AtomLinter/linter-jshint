@@ -112,5 +112,18 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "packageRules": [
+      {
+        "packagePatterns": [
+          "^eslint"
+        ],
+        "groupName": "ESLint packages"
+      }
+    ]
   }
 }
