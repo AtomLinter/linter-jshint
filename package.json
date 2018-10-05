@@ -63,7 +63,7 @@
     "@commitlint/config-conventional": "7.1.2",
     "@commitlint/travis-cli": "7.2.0",
     "@semantic-release/apm-config": "5.0.2",
-    "husky": "1.1.0",
+    "husky": "1.1.1",
     "semantic-release": "15.9.17",
     "babel-eslint": "10.0.1",
     "eslint": "5.6.1",
