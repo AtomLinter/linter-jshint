@@ -1,3 +1,10 @@
+## [3.1.10](https://github.com/AtomLinter/linter-jshint/compare/v3.1.9...v3.1.10) (2019-01-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency atom-package-deps to v5 ([4993e63](https://github.com/AtomLinter/linter-jshint/commit/4993e63))
+
 ## [3.1.9](https://github.com/AtomLinter/linter-jshint/compare/v3.1.8...v3.1.9) (2018-09-27)
 
 
