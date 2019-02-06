@@ -1,3 +1,10 @@
+## [3.1.14](https://github.com/AtomLinter/linter-jshint/compare/v3.1.13...v3.1.14) (2019-02-06)
+
+
+### Bug Fixes
+
+* **deps:** pin remaining dependencies ([dc01923](https://github.com/AtomLinter/linter-jshint/commit/dc01923)), closes [#627](https://github.com/AtomLinter/linter-jshint/issues/627)
+
 ## [3.1.13](https://github.com/AtomLinter/linter-jshint/compare/v3.1.12...v3.1.13) (2019-02-05)
 
 
