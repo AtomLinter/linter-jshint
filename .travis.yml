@@ -62,6 +62,7 @@ addons:
     - git
     - libgnome-keyring-dev
     - fakeroot
+    - libgconf-2-4
 
 stages:
   - test
