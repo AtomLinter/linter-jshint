@@ -53,7 +53,7 @@ git:
 
 sudo: false
 
-dist: trusty
+dist: xenial
 
 addons:
   apt:
