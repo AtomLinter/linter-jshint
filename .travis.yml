@@ -53,7 +53,7 @@ git:
 
 sudo: false
 
-dist: trusty
+dist: xenial
 
 addons:
   apt:
@@ -62,6 +62,7 @@ addons:
     - git
     - libgnome-keyring-dev
     - fakeroot
+    - libgconf-2-4
 
 stages:
   - test
