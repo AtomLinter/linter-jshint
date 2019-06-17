@@ -65,7 +65,7 @@
     "@semantic-release/apm-config": "6.0.1",
     "husky": "2.4.1",
     "semantic-release": "15.13.16",
-    "babel-eslint": "10.0.1",
+    "babel-eslint": "10.0.2",
     "eslint": "5.16.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-plugin-import": "2.17.3",
