@@ -1,3 +1,10 @@
+## [3.1.17](https://github.com/AtomLinter/linter-jshint/compare/v3.1.16...v3.1.17) (2019-09-13)
+
+
+### Bug Fixes
+
+* update package-lock.json for security audit ([6d139d7](https://github.com/AtomLinter/linter-jshint/commit/6d139d7))
+
 ## [3.1.16](https://github.com/AtomLinter/linter-jshint/compare/v3.1.15...v3.1.16) (2019-04-22)
 
 
