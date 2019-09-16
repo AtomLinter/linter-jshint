@@ -59,9 +59,9 @@
     "shelljs": "0.8.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.1.0",
-    "@commitlint/travis-cli": "8.1.0",
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
+    "@commitlint/travis-cli": "8.2.0",
     "@semantic-release/apm-config": "6.0.1",
     "husky": "3.0.5",
     "semantic-release": "15.13.24",
