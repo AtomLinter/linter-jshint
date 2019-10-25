@@ -66,7 +66,7 @@
     "husky": "3.0.9",
     "semantic-release": "15.13.28",
     "babel-eslint": "10.0.3",
-    "eslint": "6.4.0",
+    "eslint": "6.6.0",
     "eslint-config-airbnb-base": "14.0.0",
     "eslint-plugin-import": "2.18.2",
     "flow-bin": "0.110.1",
