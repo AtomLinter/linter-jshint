@@ -1,3 +1,10 @@
+## [3.1.19](https://github.com/AtomLinter/linter-jshint/compare/v3.1.18...v3.1.19) (2020-01-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency jshint to v2.11.0 ([d1ab9c3](https://github.com/AtomLinter/linter-jshint/commit/d1ab9c320451f085bd156e1702e461e118271c9e))
+
 ## [3.1.18](https://github.com/AtomLinter/linter-jshint/compare/v3.1.17...v3.1.18) (2019-12-18)
 
 
