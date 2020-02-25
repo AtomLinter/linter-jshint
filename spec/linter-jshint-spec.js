@@ -95,13 +95,14 @@ describe('The JSHint provider for Linter', () => {
   });
 
   describe('handles .jshintignore files', () => {
-    const checkMessage = (message, filePath) => {
+    const checkMessages = (messages, filePath) => {
       const expected = "W098 - 'foo' is defined but never used.";
 
-      expect(message.severity).toBe('warning');
-      expect(message.excerpt).toBe(expected);
-      expect(message.location.file).toBe(filePath);
-      expect(message.location.position).toEqual([[0, 4], [0, 7]]);
+      expect(messages.length).toBe(1);
+      expect(messages[0].severity).toBe('warning');
+      expect(messages[0].excerpt).toBe(expected);
+      expect(messages[0].location.file).toBe(filePath);
+      expect(messages[0].location.position).toEqual([[0, 4], [0, 7]]);
     };
 
     it('works when in the same directory', async () => {
@@ -110,11 +111,10 @@ describe('The JSHint provider for Linter', () => {
       const ignoredPath = path.join(ignoreDir, 'ignored.js');
       const checkEditor = await atom.workspace.open(checkedPath);
       const ignoreEditor = await atom.workspace.open(ignoredPath);
-      const checkMessages = await lint(checkEditor);
+      const checkedMessages = await lint(checkEditor);
       const ignoreMessages = await lint(ignoreEditor);
 
-      expect(checkMessages.length).toBe(1);
-      checkMessage(checkMessages[0], checkedPath);
+      checkMessages(checkedMessages, checkedPath);
 
       expect(ignoreMessages.length).toBe(0);
     });
@@ -125,11 +125,10 @@ describe('The JSHint provider for Linter', () => {
       const ignoredPath = path.join(ignoreDir, 'ignored.js');
       const checkEditor = await atom.workspace.open(checkedPath);
       const ignoreEditor = await atom.workspace.open(ignoredPath);
-      const checkMessages = await lint(checkEditor);
+      const checkedMessages = await lint(checkEditor);
       const ignoreMessages = await lint(ignoreEditor);
 
-      expect(checkMessages.length).toBe(1);
-      checkMessage(checkMessages[0], checkedPath);
+      checkMessages(checkedMessages, checkedPath);
 
       expect(ignoreMessages.length).toBe(0);
     });
