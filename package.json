@@ -64,7 +64,7 @@
     "@commitlint/travis-cli": "8.3.5",
     "@semantic-release/apm-config": "8.0.0",
     "husky": "4.2.3",
-    "semantic-release": "17.0.4",
+    "semantic-release": "17.2.3",
     "babel-eslint": "10.0.3",
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.0.0",
